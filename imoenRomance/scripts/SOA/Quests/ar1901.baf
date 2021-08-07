@@ -1,0 +1,14 @@
+/*faldorn jaheira comment */
+//everyone must be in the area
+IF
+	InParty("Imoen2")
+	!ActuallyInCombat()
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+    !StateCheck("Imoen2",CD_STATE_NOTVALID)
+	Global("SPRITE_IS_DEADFaldorn","GLOBAL",1)
+	Global("MRJahFaldorn","GLOBAL",1)
+THEN
+	RESPONSE #100
+	SetGlobal("MRJahFaldorn","GLOBAL",2)
+	ActionOverride("Imoen2",StartDialogueNoSet(Player1))
+END

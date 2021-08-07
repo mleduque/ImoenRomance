@@ -1,0 +1,49 @@
+
+//force the talk to happen a little bit after the challenge 1 gate is opened which is at the start of the game entering pocketplane
+IF
+	InParty(Myself)
+	InParty("Imoen2")
+	Global("IRTAerieImoenTimer","GLOBAL",0)
+	Global("IRTImAerTalks","GLOBAL",0)
+	Global("OpenDoor1","AR4500",1)
+THEN
+	RESPONSE #100
+
+		RealSetGlobalTimer("IRTAerieImoenTimer","GLOBAL",300)
+END
+
+
+IF
+	InParty(Myself)
+	RealGlobalTimerExpired("IRTAerieImoenTimer","GLOBAL")
+	See("Imoen2")
+	!ActuallyInCombat()
+	!StateCheck("Imoen2",CD_STATE_NOTVALID)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+	!AreaType(DUNGEON)
+	IsValidForPartyDialog("Imoen2")
+	OR(2)
+	Global("IRTImAerTalks","GLOBAL",0)
+	Global("IRTImAerTalks","GLOBAL",2)
+	!Global("IRTAerImFriend","GLOBAL",2)
+THEN
+	RESPONSE #100
+		IncrementGlobal("IRTImAerTalks","GLOBAL",1)
+		StartDialogueNoSet("Imoen2")
+END
+
+IF
+	InParty(Myself)
+	RealGlobalTimerExpired("IRTAerieImoenTimer","GLOBAL")
+	Global("IRTImoenDumped","GLOBAL",1)
+	See("Imoen2")
+	!ActuallyInCombat()
+	!StateCheck("Imoen2",CD_STATE_NOTVALID)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+	!AreaType(DUNGEON)
+	Global("IRTAerieComfortsDumpedImoen","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("IRTAerieComfortsDumpedImoen","GLOBAL",1)
+		StartDialogueNoSet("Imoen2")
+END

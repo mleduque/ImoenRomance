@@ -1,0 +1,15 @@
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneId("Xaglaroth")
+	MoveToPointNoInterrupt([2456.1314])
+	Wait(2)
+	//ActionOverride(Player1,Face(SSE))
+	ActionOverride(Player1,Face(15))
+	Wait(1)
+	 SetGlobal("IRTBraceletXag","GLOBAL",1)
+	StartDialogueNoSet(Player1)
+	EndCutSceneMode()
+END
+

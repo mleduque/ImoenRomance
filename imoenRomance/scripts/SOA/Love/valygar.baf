@@ -1,0 +1,27 @@
+
+
+
+//valygar party reaction
+IF
+	Global("MRValygarReaction","GLOBAL",0)
+	Global("ImoenRomanceActive","GLOBAL",2)
+	OR(8)
+	Global("MRKeldornReaction","GLOBAL",2)
+	Global("MRAerieReaction","GLOBAL",2)
+	Global("MRViconiaReaction","GLOBAL",2)
+	Global("MRJaheiraReaction","GLOBAL",2)
+	Global("MRJanReaction","GLOBAL",2)
+	Global("MRNaliaReaction","GLOBAL",2)
+	Global("MRCerndReaction","GLOBAL",2)
+	Global("MRAnomenReaction","GLOBAL",2)
+	IsValidForPartyDialog("Valygar")
+	Global("MRSleptImoen","GLOBAL",1)
+	IsValidForPartyDialog("Imoen2")
+		
+	GlobalTimerExpired("MRPartyReactionTimer","GLOBAL")
+THEN
+	RESPONSE #100
+	SetGlobal("MRValygarReaction","GLOBAL",1) 
+	SetGlobalTimer("MRPartyReactionTimer","GLOBAL",ONE_DAY)
+	StartDialogueNoSet(Player1)
+END

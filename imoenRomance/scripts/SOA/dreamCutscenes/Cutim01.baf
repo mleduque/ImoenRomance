@@ -1,0 +1,31 @@
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId("ImDream")
+        MoveToPoint([4179.2512])
+        JumpToPoint([4516.2935])
+        MoveViewPoint([4467.2973],6)
+	  Face(0)
+END
+
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId(Player1)
+        Wait(3)
+        MoveToPointNoInterrupt([4279.2512])
+        FadeToColor([30.0],0)
+        JumpToPoint([4633.2870])
+        Face(0)
+	  Wait(6)
+	  DayNight(10)
+	  ActionOverride("ImDream",JumpToPoint([4516.2935]))
+        FadeFromColor([30.0],0)
+        Wait(4)
+        ActionOverride("ImDream",StartDialogueNoSet(Player1))
+        EndCutSceneMode()
+END
+
+

@@ -1,0 +1,21 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+	Cutsceneid(Player1)
+	Wait(2)
+	Fadetocolor([30.0],0)
+	Wait(2)
+	Moveviewobject("ImDream",0)
+	ActionOverride("ImDream",DestroySelf())
+	CreateCreature("ImDrea2",[664.545],4)
+	ApplySpell("ImDrea2",CLERIC_AID)
+	ApplySpell("ImDrea2",CLERIC_HOLY_POWER)
+	ApplySpell("ImDrea2",CLERIC_DRAW_UPON_HOLY_MIGHT)
+	wait(6)
+	Fadefromcolor([30.0],0)
+	Wait(3)
+	SetGlobal("MRDream3","GLOBAL",5)
+	Actionoverride("ImDrea2",Startdialognoset(Player1))
+	Endcutscenemode()
+END

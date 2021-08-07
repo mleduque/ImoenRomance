@@ -1,0 +1,11 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+	CutSceneId("ImDrea2")
+	Wait(1)
+	MoveToObject(Player1)
+	Smallwait(3)
+	SetGlobal("MRDream3","GLOBAL",6)
+	StartDialogNoSet(Player1)
+END

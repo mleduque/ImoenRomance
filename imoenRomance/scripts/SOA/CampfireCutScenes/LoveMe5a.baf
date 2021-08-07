@@ -1,0 +1,68 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+	CutSceneId(Player1)
+	JumpToPoint([2380.657])
+	MoveViewPoint([2380.657],0)
+	Wait(2)
+	Face(13)
+	FadeFromColor([60.0],0)
+	Wait(4)
+	StartDialogueNoSet(Player1)
+	EndCutSceneMode()
+END		
+
+
+IF
+	True()
+THEN
+	RESPONSE #100
+	CutSceneId(Player2)
+	JumpToPoint([2349.595])
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+	CutSceneId(Player3)
+	JumpToPoint([2309.688])
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+	CutSceneId(Player4)
+	JumpToPoint([2216.691])
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+	CutSceneId(Player5)
+	JumpToPoint([2185.640])
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+	CutSceneId(Player6)
+	JumpToPoint([2231.591])
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+	CutSceneId("Imoen2")
+	Wait(1)
+	JumpToPoint([2480.657])
+	Face(13)
+END		
+
+
+

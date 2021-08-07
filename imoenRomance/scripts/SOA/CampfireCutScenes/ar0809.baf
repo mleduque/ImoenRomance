@@ -1,0 +1,14 @@
+//set timer to for 2nd prompt to camp after bodhi dies if lovetalk9 already passsed
+//this is for the scenario when underdark exit asked to camp but you said want to wait till after bodhi
+IF
+	Global("MRCampfire","GLOBAL",0)
+	Global("BodhiDead","GLOBAL",1)
+	GlobalGT("MRLoveTalk","GLOBAL",9)
+	Global("MRThinkCampAfterBodhi","GLOBAL",1)
+	 GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%) //after underdark
+   Global("ImoenRomanceActive","GLOBAL",1)
+THEN
+  RESPONSE #100
+  SetGlobal("MRThinkCampAfterBodhi","GLOBAL",2)
+  SetGlobal("MRCampfire","GLOBAL",1)
+END

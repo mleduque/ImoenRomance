@@ -1,0 +1,31 @@
+//balthazar room
+//after last talk with solar melissan, ports back to this room.
+
+IF
+  Global("TalkedToSolar","GLOBAL",6)
+   Global("IRTSolarMelissanTalk","GLOBAL",0)
+     !StateCheck(Player1,CD_STATE_NOTVALID)
+	!StateCheck("Imoen2",CD_STATE_NOTVALID)
+	!Global("IRTShutUp","GLOBAL",1)
+	 IsValidForPartyDialog("Imoen2")
+	Global("IRTSolarMelissanTalkDelay","GLOBAL",0)
+
+THEN
+   RESPONSE #100
+   RealSetGlobalTimer("IRTSolarMelissanTalkDelay","GLOBAL",4)
+END
+
+IF
+  Global("TalkedToSolar","GLOBAL",6)
+   Global("IRTSolarMelissanTalk","GLOBAL",0)
+     !StateCheck(Player1,CD_STATE_NOTVALID)
+	!StateCheck("Imoen2",CD_STATE_NOTVALID)
+	!Global("IRTShutUp","GLOBAL",1)
+	 IsValidForPartyDialog("Imoen2")
+	 RealGlobalTimerExpired("IRTSolarMelissanTalkDelay","GLOBAL")
+	!ActuallyInCombat()
+THEN
+   RESPONSE #100
+     SetGlobal("IRTSolarMelissanTalk","GLOBAL",1)
+	ActionOverride("Imoen2",StartDialogueNoSet(Player1))
+END

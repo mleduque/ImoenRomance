@@ -1,0 +1,16 @@
+//reputation evil bhaal talk
+IF
+    RealGlobalTimerExpired("MRLowBhaalTimer","GLOBAL")
+	Global("MRRepLowBhaalWait","GLOBAL",1)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+	InParty("Imoen2")
+	See(Player1)
+	!ActuallyInCombat()
+	GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%) 
+	AreaType(CITY)
+THEN
+	RESPONSE #100
+	SetGlobal("MRRepLowBhaalWait","GLOBAL",2)
+	StartDialogueNoSet(Player1)
+END

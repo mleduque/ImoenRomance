@@ -1,0 +1,22 @@
+IF
+ True()
+THEN
+ RESPONSE #100
+ CutSceneId("Imoen2")
+ MoveViewObject("Imoen2",0)
+ MoveToPoint([2120.1550])
+ Wait(1)
+ EndCutSceneMode()
+ StartDialog("IMOEN25J","MRPHLYDI")
+END
+
+IF
+ True()
+THEN
+ RESPONSE #100
+ CutSceneId("MRPHLYDI")
+ ActionOverride(Player1,FaceObject("MRPHLYDI"))
+ Wait(2)
+ MoveViewObject("MRPHLYDI",VERY_FAST)
+END
+

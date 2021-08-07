@@ -1,0 +1,16 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+	CutSceneId(Player1)
+	FadeToColor([30.0],0)
+    Wait(1)
+	RestorePartyLocations()
+	MultiPlayerSync()
+	RestParty()
+	Wait(1)
+    MoveViewObject(Player1,0)
+	FadeFromColor([30.0],0)
+	Wait(1)
+	EndCutSceneMode()
+END

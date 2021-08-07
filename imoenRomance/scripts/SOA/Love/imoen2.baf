@@ -1,0 +1,99 @@
+//lovetalks timer
+IF
+	InParty(Myself)
+	RealGlobalTimerExpired("MRImoenLovetalkTimer","GLOBAL")
+	See(Player1)
+	!Detect([ENEMY])
+	!ActuallyInCombat()
+	GlobalGT("Chapter","GLOBAL",%bg2_chapter_3%)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+	Global("MRLoveTalk","GLOBAL",0)
+THEN
+	RESPONSE #100
+		IncrementGlobal("MRLoveTalk","GLOBAL",1)
+		StartDialogueNoSet(Player1)
+END
+
+//lovetalks timer rest
+IF
+	InParty(Myself)
+	RealGlobalTimerExpired("MRImoenLovetalkTimer","GLOBAL")
+	See(Player1)
+	!Detect([ENEMY])
+	!ActuallyInCombat()
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+	 !AreaCheck("ar2500")
+	 !AreaCheck("ar1500")
+	 !Global("ImoenRomanceActive","GLOBAL",3)
+	OR(3)
+		!AreaType(DUNGEON)
+		AreaCheck("AR2100")
+		AreaCheck("AR2200")
+    OR(4)
+	Global("MRLoveTalk","GLOBAL",2)
+	Global("MRLoveTalk","GLOBAL",4)
+	Global("MRLoveTalk","GLOBAL",6)
+	Global("MRLoveTalk","GLOBAL",8)
+THEN
+	RESPONSE #100
+		IncrementGlobal("MRLoveTalk","GLOBAL",1)
+		StartDialogueNoSet(Player1)
+END
+
+//check bodhi dead then create timer for one day
+//note that we use a shadow variable because
+//we do not want to mess with BodhiDead, vanilla variable
+IF
+	Global("BodhiDead","GLOBAL",1)
+	Global("MRAfterSexTalk","GLOBAL",0)
+	Global("MRSleptImoen","GLOBAL",1)
+THEN
+	RESPONSE #100
+	SetGlobal("MRAfterSexTalk","GLOBAL",1)
+	SetGlobalTimer("MRAfterSexTalkTimer","GLOBAL",ONE_DAY)
+END
+
+// After one day resolve having sex, romance resolution too
+IF
+	GlobalTimerExpired("MRAfterSexTalkTimer","GLOBAL")
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+	InParty("Imoen2")
+	See(Player1)
+	!ActuallyInCombat()
+    Global("ImoenRomanceActive","GLOBAL",1)
+	Global("MRAfterSexTalk","GLOBAL",1)
+	!AreaType(DUNGEON)
+	Global("MRSleptImoen","GLOBAL",1)
+	OR(23)
+    AreaType(OUTDOOR)
+	AreaType(FOREST)
+	AreaCheck("AR3000")
+	AreaCheck("AR0522")
+	AreaCheck("AR0901")
+	AreaCheck("AR0902")
+	AreaCheck("AR1100")
+	AreaCheck("AR1101")
+	AreaCheck("AR1102")
+	AreaCheck("AR1107")
+	AreaCheck("AR1200")
+	AreaCheck("AR1304")
+	AreaCheck("AR1305")
+	AreaCheck("AR1306")
+	AreaCheck("AR1307")
+	AreaCheck("AR1400")
+	AreaCheck("AR1700")
+	AreaCheck("AR1800")
+	AreaCheck("AR1900")
+	AreaCheck("AR1901")
+	AreaCheck("AR2500")
+	AreaCheck("AR2600")
+	AreaCheck("AR2602")
+THEN
+	RESPONSE #100
+	SetGlobal("MRAfterSexTalk","GLOBAL",2)
+	StartDialogueNoSet(Player1)
+END
+

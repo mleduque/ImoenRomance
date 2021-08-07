@@ -1,0 +1,67 @@
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneId("Imoen2")  // 
+    SetGlobal("MRStrongholdTalk","GLOBAL",3)
+    MoveViewPoint([1350.1082],VERY_FAST)
+    SmallWait(5)
+    MoveToPoint([1200.985])
+	ActionOverride("Imoen2",StartDialogueNoSet(Player1))
+    EndCutSceneMode()
+END
+
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneId(Player1)  // 
+    Wait(1)
+    MoveToPoint([1350.1082])
+END
+
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneId(Player2)  // 
+    Wait(1)
+    MoveToPoint([1275.1135])
+END
+
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneId(Player3)  // 
+    Wait(1)
+    MoveToPoint([1345.1132])
+END
+
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneId(Player4)  // 
+    Wait(1)
+    MoveToPoint([1397.1114])
+END
+
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneId(Player5)  // 
+    Wait(1)
+    MoveToPoint([1440.1089])
+END
+
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneId(Player6)  // 
+    Wait(1)
+    MoveToPoint([1426.1049])
+END
+

@@ -1,0 +1,15 @@
+IF
+	InParty(Myself)
+	!ActuallyInCombat()
+	!StateCheck("Imoen2",CD_STATE_NOTVALID)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+	!AreaType(DUNGEON)
+	IsValidForPartyDialog("Aerie")
+	Global("IRTImAerTalks","GLOBAL",12)
+	!Global("ImoenRomanceActive","GLOBAL",2)
+	!Global("IRTAerImFriend","GLOBAL",2)
+THEN
+	RESPONSE #100
+		IncrementGlobal("IRTImAerTalks","GLOBAL",1)
+		StartDialogueNoSet(Player1)
+END

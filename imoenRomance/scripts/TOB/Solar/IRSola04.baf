@@ -1,0 +1,18 @@
+IF
+   True()
+THEN
+   RESPONSE #100
+   CutSceneID(Player1) 
+   SmallWait(4)
+   Wait(3)
+   ActionOverride("MRNevea",StartDialog("MRNevea","MRNevea"))
+END
+
+IF
+   True()
+THEN
+   RESPONSE #100
+   CutSceneID("MRTarren")
+   SmallWait(4)
+   PlayDeadInterruptable(10000)
+END

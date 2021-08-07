@@ -1,0 +1,18 @@
+IF
+	InParty("Imoen2")
+	Global("ImoenRomanceActive","GLOBAL",2)
+	Global("MRBraceletMerCreated","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("MRBraceletMerCreated","GLOBAL",1)
+		CreateCreature("MRWOMER",[2050.1396],14) // Alisha the Merchant
+END
+
+IF
+	InParty(Myself)
+	Global("MRRingSellImoen","GLOBAL",7)
+THEN
+	RESPONSE #100
+		SetGlobal("MRRingSellImoen","GLOBAL",8)
+		ActionOverride("MRWOMER",DestroySelf())
+END

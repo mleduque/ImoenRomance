@@ -1,0 +1,17 @@
+IF
+   True()
+THEN
+   RESPONSE #100
+   CutSceneID(Player1)
+	FadeToColor([30.0],0) 
+	Wait(1) 
+	JumpToPoint([504.1614])
+	ActionOverride("Imoen2",JumpToPoint([531.1614]))
+	FaceObject("Imoen2")
+	ActionOverride("Imoen2",FaceObject(Player1))
+	MoveViewObject(Player1,INSTANT)
+	Wait(4) 
+	FadeFromColor([30.0],0)
+	ActionOverride("Imoen2",StartDialogueNoSet(Player1))
+	EndCutSceneMode()
+END

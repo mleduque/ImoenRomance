@@ -1,0 +1,16 @@
+
+//thief stonghold talk
+
+IF
+	Global("MRStrongholdTalkThie","GLOBAL",0)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	AreaCheckObject("AR0322","Imoen2")
+	AreaCheckObject("AR0322",Player1)
+	GlobalGT("PlayerThiefGuild","GLOBAL",0)
+	InParty("Imoen2")
+	!ActuallyInCombat()
+THEN
+	RESPONSE #100
+	SetGlobal("MRStrongholdTalkThie","GLOBAL",1)
+	ActionOverride("Imoen2",StartDialogueNoSet(Player1))
+END

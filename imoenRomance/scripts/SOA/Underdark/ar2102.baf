@@ -1,0 +1,14 @@
+/*adalon lair talk check with imoen for killing her*/
+//everyone must be in the area
+IF
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+    !StateCheck("Imoen2",CD_STATE_NOTVALID)
+	InParty("Imoen2")
+	!ActuallyInCombat()
+	Dead("udsilver")
+	Global("MRAdalonDead","AR2102",0)
+THEN
+	RESPONSE #100
+	SetGlobal("MRAdalonDead","AR2102",1)
+    ActionOverride("Imoen2",StartDialogueNoSet(Player1))
+END

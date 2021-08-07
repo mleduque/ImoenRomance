@@ -1,0 +1,31 @@
+
+//Druid stonghold talk
+IF
+	Global("MRStrongholdTalkDrui","GLOBAL",0)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	Global("DruidStronghold","GLOBAL",1)
+	InParty("Imoen2")
+	!ActuallyInCombat()
+	Global("ImoenRomanceActive","GLOBAL",2)
+	AreaCheckObject("AR1900","Imoen2")
+	AreaCheckObject("AR1900",Player1)
+THEN
+	RESPONSE #100
+	SetGlobal("MRStrongholdTalkDrui","GLOBAL",1)
+	ActionOverride("Imoen2",StartDialogueNoSet(Player1))
+END
+
+IF
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	Global("DruidStronghold","GLOBAL",1)
+	InParty("Imoen2")
+	!ActuallyInCombat()
+	Global("ImoenRomanceActive","GLOBAL",2)
+	Global("MRStrongholdTalkDrui","GLOBAL",3)
+	AreaCheckObject("AR1900","Imoen2")
+	AreaCheckObject("AR1900",Player1)
+THEN
+	RESPONSE #100
+	SetGlobal("MRStrongholdTalkDrui","GLOBAL",4)
+	ActionOverride("Imoen2",StartDialogueNoSet(Player1))
+END

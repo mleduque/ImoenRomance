@@ -1,0 +1,14 @@
+//Viconia party reaction
+IF
+		Global("MRViconiaReaction","GLOBAL",0)
+		Global("ImoenRomanceActive","GLOBAL",2)
+		Global("MRSleptImoen","GLOBAL",1)
+		IsValidForPartyDialog("Imoen2")
+		IsValidForPartyDialog("Viconia")
+		GlobalTimerExpired("MRPartyReactionTimer","GLOBAL")
+THEN
+	RESPONSE #100
+	SetGlobal("MRViconiaReaction","GLOBAL",1) 
+	SetGlobalTimer("MRPartyReactionTimer","GLOBAL",ONE_DAY)
+	StartDialogueNoSet(Player1)
+END

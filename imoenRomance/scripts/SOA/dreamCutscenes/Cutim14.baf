@@ -1,0 +1,13 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+	Cutsceneid(Player1)
+	Fadetocolor([30.0],0)
+	wait(6)
+	Fadefromcolor([30.0],0)
+	Wait(2)
+	SetGlobal("MRDream3","GLOBAL",4)
+	Actionoverride("hyounim2",Startdialognoset("hyounCh2"))
+	Endcutscenemode()
+END

@@ -1,0 +1,53 @@
+IF
+	Global("StartedBhaalTimerTalk","GLOBAL",0)
+	Global("IRTBhaalTalkTimer","GLOBAL",0)
+THEN
+	RESPONSE #100
+	SetGlobal("StartedBhaalTimerTalk","GLOBAL",1)
+	RealSetGlobalTimer("IRTBhaalTalkTimer","GLOBAL",2700)
+END
+
+
+// talks 1
+IF
+	RealGlobalTimerExpired("IRTBhaalTalkTimer","GLOBAL")
+	Global("ExpBImoen10","LOCALS",0)
+	!ActuallyInCombat()
+	See(Player1)
+	InParty("Imoen2")
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	Interact(Player1)
+END
+
+// talks 2
+IF
+	RealGlobalTimerExpired("IRTBhaalTalkTimer","GLOBAL")
+	Global("ExpBImoen10","LOCALS",1)
+	!ActuallyInCombat()
+	See(Player1)
+	InParty("Imoen2")
+	Dead("Gromnir")
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	Interact(Player1)
+END
+
+// talks 3
+IF
+	RealGlobalTimerExpired("IRTBhaalTalkTimer","GLOBAL")
+	Global("ExpBImoen10","LOCALS",2)
+	!ActuallyInCombat()
+	Dead("Yaga01")
+	See(Player1)
+	InParty("Imoen2")
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	Interact(Player1)
+END

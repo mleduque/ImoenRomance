@@ -1,0 +1,29 @@
+
+//slayer dream talk
+IF
+	Global("GivePowerSlayer","GLOBAL",2)
+	Global("MRSlayDreamResolved","GLOBAL",0)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+	GlobalGT("MRLoveTalk","GLOBAL",1)
+	GlobalLT("MRLoveTalk","GLOBAL",7)
+	InParty("Imoen2")
+	See(Player1)
+	!ActuallyInCombat()
+	PartyRested()
+THEN
+	RESPONSE #100
+	SetGlobal("MRSlayDreamResolved","GLOBAL",1)
+	StartDialogNoSet(Player1)
+END
+
+
+//start aerie talks timer
+IF 
+	InParty("Aerie")
+	InParty("Imoen2")
+	Global("MRAerieFriendshipTimer","GLOBAL",0)
+THEN
+	RESPONSE #100
+	RealSetGlobalTimer("MRAerieFriendshipTimer","GLOBAL",300)
+END

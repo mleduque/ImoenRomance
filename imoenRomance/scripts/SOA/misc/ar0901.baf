@@ -1,0 +1,15 @@
+
+//Helm stonghold talk
+IF
+	Global("MRStrongholdTalkCler","GLOBAL",0)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+    AreaCheckObject("AR0901","Imoen2")
+	AreaCheckObject("AR0901",Player1)
+	GlobalGT("JoinHelm","GLOBAL",0)
+	InParty("Imoen2")
+	!ActuallyInCombat()
+THEN
+	RESPONSE #100
+	SetGlobal("MRStrongholdTalkCler","GLOBAL",1)
+	ActionOverride("Imoen2",StartDialogueNoSet(Player1))
+END

@@ -1,0 +1,41 @@
+// APPEND TO IMOEN25
+
+
+// *** Gorion Wraith-related code ***
+
+
+
+// ~~ For the post-Gorion wraith talk ~~
+
+IF // Imoen is in relatively good health
+   InParty("Imoen2")
+   !Dead("Imoen2")
+   Global("IRTPostGorEvent","GLOBAL",0)
+   OR(3)
+      Global("IRTPostWraithAttitude","GLOBAL",1)
+      Global("IRTPostWraithAttitude","GLOBAL",2)
+      Global("IRTPostWraithAttitude","GLOBAL",3)
+   Dead("HGWRA01")
+   !ActuallyInCombat()
+THEN
+   RESPONSE #100
+      SetGlobal("IRTPostGorEvent","GLOBAL",1)
+      StartDialogueNoSet(Player1)
+END
+
+
+
+// ~~ Imoen leaves under certain circumstances when you leave the area ~~
+
+IF
+   InParty("Imoen2")
+   Global("IRTImoenLeavesAtAreaChange","GLOBAL",1)
+   !AreaCheck("AR5202")
+   !AreaCheck("AR4500")
+THEN
+   RESPONSE #100
+      SetGlobal("IRTImoenLeavesAtAreaChange","GLOBAL",2)
+      ActionOverride(Player1,CreateItem("mrimnote",1,0,0))
+      LeaveParty()
+      DestroySelf()
+END

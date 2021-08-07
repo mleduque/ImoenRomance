@@ -1,0 +1,799 @@
+//it is still possible to trigger imoens original bio IF LITERALLY NO VARIABLE FOR NEW EPILOGUES WERE SET 
+//this is because all these should trigger first as they would be appended to the bottom of ar600 epilogue triggering file.
+
+//100
+IF
+  Global("StartEndBios","AR6200",1)
+  InParty("Imoen2")  // Imoen2
+  Global("ImoenBio","GLOBAL",0)
+  Global("IRTEpAscendedFull","GLOBAL",1)
+  !Alignment(Player1,MASK_EVIL)
+THEN
+  RESPONSE #100
+    SetGlobal("ImoenBio","GLOBAL",1)
+    TextScreen("IMOE100")
+    SmallWait(1)
+   
+END
+
+//101
+IF
+  Global("StartEndBios","AR6200",1)
+  InParty("Imoen2")  // Imoen2
+  Global("ImoenBio","GLOBAL",0)
+  Global("IRTEpAscendedFull","GLOBAL",1)
+Alignment(Player1,MASK_EVIL)
+THEN
+  RESPONSE #100
+    SetGlobal("ImoenBio","GLOBAL",1)
+    TextScreen("IMOE101")
+    SmallWait(1)
+    
+END
+
+//110
+IF
+  Global("StartEndBios","AR6200",1)
+  InParty("Imoen2")  // Imoen2
+  Global("ImoenBio","GLOBAL",0)
+  Global("IRTEpAscendedMaiden","GLOBAL",1)
+!Alignment(Player1,MASK_EVIL)
+THEN
+  RESPONSE #100
+    SetGlobal("ImoenBio","GLOBAL",1)
+    TextScreen("IMOE110")
+    SmallWait(1)
+	
+   
+END
+
+//111
+IF
+  Global("StartEndBios","AR6200",1)
+  InParty("Imoen2")  // Imoen2
+  Global("ImoenBio","GLOBAL",0)
+  Global("IRTEpAscendedMaiden","GLOBAL",1)
+Alignment(Player1,MASK_EVIL)
+THEN
+  RESPONSE #100
+    SetGlobal("ImoenBio","GLOBAL",1)
+    TextScreen("IMOE111")
+    SmallWait(1)
+   
+END
+
+//120
+IF
+  Global("StartEndBios","AR6200",1)
+  InParty("Imoen2")  // Imoen2
+  Global("ImoenBio","GLOBAL",0)
+  Global("IRTEpAscendedMaiden2","GLOBAL",1)
+!Alignment(Player1,MASK_EVIL)
+THEN
+  RESPONSE #100
+    SetGlobal("ImoenBio","GLOBAL",1)
+    TextScreen("IMOE120")
+    SmallWait(1)
+   
+END
+
+//121
+IF
+  Global("StartEndBios","AR6200",1)
+  InParty("Imoen2")  // Imoen2
+  Global("ImoenBio","GLOBAL",0)
+  Global("IRTEpAscendedMaiden2","GLOBAL",1)
+Alignment(Player1,MASK_EVIL)
+THEN
+  RESPONSE #100
+    SetGlobal("ImoenBio","GLOBAL",1)
+    TextScreen("IMOE121")
+    SmallWait(1)
+   
+END
+
+//200
+IF
+  Global("StartEndBios","AR6200",1)
+  InParty("Imoen2")  // Imoen2
+  Global("ImoenBio","GLOBAL",0)
+  OR(2)
+	Dead("Aerie")
+	!GlobalGT("IRTAerImFriend","GLOBAL",0)
+Global("IRTEpSoloMad","GLOBAL",1)
+Alignment(Player1,MASK_GOOD)
+THEN
+  RESPONSE #100
+    SetGlobal("ImoenBio","GLOBAL",1)
+    TextScreen("IMOE200")
+    SmallWait(1)
+   
+END
+
+//201
+IF
+  Global("StartEndBios","AR6200",1)
+  InParty("Imoen2")  // Imoen2
+  Global("ImoenBio","GLOBAL",0)
+  OR(2)
+	Dead("Aerie")
+	!GlobalGT("IRTAerImFriend","GLOBAL",0)
+  Global("IRTEpSoloMad","GLOBAL",1)
+  Alignment(Player1,LAWFUL_NEUTRAL)
+THEN
+  RESPONSE #100
+    SetGlobal("ImoenBio","GLOBAL",1)
+    TextScreen("IMOE201")
+    SmallWait(1)
+   
+END
+
+//202
+IF
+  Global("StartEndBios","AR6200",1)
+  InParty("Imoen2")  // Imoen2
+  Global("ImoenBio","GLOBAL",0)
+  OR(2)
+	Dead("Aerie")
+	!GlobalGT("IRTAerImFriend","GLOBAL",0)
+Global("IRTEpSoloMad","GLOBAL",1)
+Alignment(Player1,NEUTRAL)
+THEN
+  RESPONSE #100
+    SetGlobal("ImoenBio","GLOBAL",1)
+    TextScreen("IMOE202")
+    SmallWait(1)
+   
+END
+
+//203
+IF
+  Global("StartEndBios","AR6200",1)
+  InParty("Imoen2")  // Imoen2
+  Global("ImoenBio","GLOBAL",0)
+  OR(2)
+	Dead("Aerie")
+	!GlobalGT("IRTAerImFriend","GLOBAL",0)
+Global("IRTEpSoloMad","GLOBAL",1)
+Alignment(Player1,CHAOTIC_NEUTRAL)
+THEN
+  RESPONSE #100
+    SetGlobal("ImoenBio","GLOBAL",1)
+    TextScreen("IMOE203")
+    SmallWait(1)
+   
+END
+
+//204
+IF
+  Global("StartEndBios","AR6200",1)
+  InParty("Imoen2")  // Imoen2
+  Global("ImoenBio","GLOBAL",0)
+ OR(2)
+	Dead("Aerie")
+	!GlobalGT("IRTAerImFriend","GLOBAL",0)
+Global("IRTEpSoloMad","GLOBAL",1)
+Alignment(Player1,MASK_EVIL)
+THEN
+  RESPONSE #100
+    SetGlobal("ImoenBio","GLOBAL",1)
+    TextScreen("IMOE204")
+    SmallWait(1)
+   
+END
+
+//205
+IF
+  Global("StartEndBios","AR6200",1)
+  InParty("Imoen2")  // Imoen2
+  Global("ImoenBio","GLOBAL",0)
+  !Dead("Aerie")
+   GlobalGT("IRTAerImFriend","GLOBAL",0)
+Global("IRTEpSoloMad","GLOBAL",1)
+!Alignment(Player1,MASK_EVIL)
+THEN
+  RESPONSE #100
+    SetGlobal("ImoenBio","GLOBAL",1)
+    TextScreen("IMOE205")
+    SmallWait(1)
+   
+END
+
+//206
+IF
+  Global("StartEndBios","AR6200",1)
+  InParty("Imoen2")  // Imoen2
+  Global("ImoenBio","GLOBAL",0)
+  !Dead("Aerie")
+  GlobalGT("IRTAerImFriend","GLOBAL",0)
+Global("IRTEpSoloMad","GLOBAL",1)
+Alignment(Player1,MASK_EVIL)
+THEN
+  RESPONSE #100
+    SetGlobal("ImoenBio","GLOBAL",1)
+    TextScreen("IMOE206")
+    SmallWait(1)
+   
+END
+
+//210
+IF
+  Global("StartEndBios","AR6200",1)
+  InParty("Imoen2")  // Imoen2
+  Global("ImoenBio","GLOBAL",0)
+  !Dead("Aerie")
+GlobalGT("IRTAerImFriend","GLOBAL",0)
+Global("IRTEpSoloStandard","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ImoenBio","GLOBAL",1)
+    TextScreen("IMOE210")
+    SmallWait(1)
+   
+END
+
+//211
+IF
+  Global("StartEndBios","AR6200",1)
+  InParty("Imoen2")  // Imoen2
+  Global("ImoenBio","GLOBAL",0)
+  OR(2)
+	Dead("Aerie")
+	!GlobalGT("IRTAerImFriend","GLOBAL",0)
+Global("IRTEpSoloStandard","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ImoenBio","GLOBAL",1)
+    TextScreen("IMOE211")
+    SmallWait(1)
+   
+END
+
+//212
+IF
+  Global("StartEndBios","AR6200",1)
+  InParty("Imoen2")  // Imoen2
+  Global("ImoenBio","GLOBAL",0)
+  !Dead("Aerie")
+GlobalGT("IRTAerImFriend","GLOBAL",0)
+!Global("IRTImAerWishYes","GLOBAL",1)
+!Global("IRTEpSoloMad","GLOBAL",1)
+!Global("IRTEpAscendedFull","GLOBAL",1)
+!Global("IRTEpJointMad","GLOBAL",1)
+!Global("IRTEpSoloStandard","GLOBAL",1)
+!Global("IRTEpAscendedMaiden","GLOBAL",1)
+!Global("IRTEpJointStandard","GLOBAL",1)
+!Global("IRTEpAscendedMaiden2","GLOBAL",1)
+Global("PlayerChoseEssence","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ImoenBio","GLOBAL",1)
+    TextScreen("IMOE212")
+    SmallWait(1)
+   
+END
+
+//213
+IF
+  Global("StartEndBios","AR6200",1)
+  InParty("Imoen2")  // Imoen2
+  Global("ImoenBio","GLOBAL",0)
+  !Dead("Aerie")
+  GlobalGT("IRTAerImFriend","GLOBAL",0)
+Global("IRTImAerWishYes","GLOBAL",1)
+!Global("IRTEpSoloMad","GLOBAL",1)
+!Global("IRTEpAscendedFull","GLOBAL",1)
+!Global("IRTEpJointMad","GLOBAL",1)
+!Global("IRTEpSoloStandard","GLOBAL",1)
+!Global("IRTEpAscendedMaiden","GLOBAL",1)
+!Global("IRTEpJointStandard","GLOBAL",1)
+!Global("IRTEpAscendedMaiden2","GLOBAL",1)
+Global("PlayerChoseEssence","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ImoenBio","GLOBAL",1)
+    TextScreen("IMOE213")
+    SmallWait(1)
+   
+END
+
+//300
+IF
+  Global("StartEndBios","AR6200",1)
+  InParty("Imoen2")  // Imoen2
+  Global("ImoenBio","GLOBAL",0)
+  OR(2)
+	Dead("Aerie")
+	Global("IRTAerImFriend","GLOBAL",0)
+Global("IRTEpJointMad","GLOBAL",1)
+Alignment(Player1,MASK_GOOD)
+!Global("IRTWantsMarriage","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ImoenBio","GLOBAL",1)
+    TextScreen("IMOE300")
+    SmallWait(1)
+   
+END
+
+//301
+IF
+  Global("StartEndBios","AR6200",1)
+  InParty("Imoen2")  // Imoen2
+  Global("ImoenBio","GLOBAL",0)
+  OR(2)
+	Dead("Aerie")
+	Global("IRTAerImFriend","GLOBAL",0)
+Global("IRTEpJointMad","GLOBAL",1)
+Alignment(Player1,MASK_GOOD)
+Global("IRTWantsMarriage","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ImoenBio","GLOBAL",1)
+    TextScreen("IMOE301")
+    SmallWait(1)
+   
+END
+
+//302
+IF
+  Global("StartEndBios","AR6200",1)
+  InParty("Imoen2")  // Imoen2
+  Global("ImoenBio","GLOBAL",0)
+  GlobalGT("IRTAerImFriend","GLOBAL",0)
+Global("IRTEpJointMad","GLOBAL",1)
+Alignment(Player1,MASK_GOOD)
+!Global("IRTWantsMarriage","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ImoenBio","GLOBAL",1)
+    TextScreen("IMOE302")
+    SmallWait(1)
+   
+END
+
+//303
+IF
+  Global("StartEndBios","AR6200",1)
+  InParty("Imoen2")  // Imoen2
+  Global("ImoenBio","GLOBAL",0)
+  !Dead("Aerie")
+GlobalGT("IRTAerImFriend","GLOBAL",0)
+Global("IRTEpJointMad","GLOBAL",1)
+Alignment(Player1,MASK_GOOD)
+Global("IRTWantsMarriage","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ImoenBio","GLOBAL",1)
+    TextScreen("IMOE303")
+    SmallWait(1)
+   
+END
+
+//304
+IF
+  Global("StartEndBios","AR6200",1)
+  InParty("Imoen2")  // Imoen2
+  Global("ImoenBio","GLOBAL",0)
+  OR(2)
+	Dead("Aerie")
+	Global("IRTAerImFriend","GLOBAL",0)
+Global("IRTEpJointMad","GLOBAL",1)
+!Alignment(Player1,MASK_GOOD)
+!Alignment(Player1,MASK_EVIL)
+!Global("IRTWantsMarriage","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ImoenBio","GLOBAL",1)
+    TextScreen("IMOE304")
+    SmallWait(1)
+   
+END
+
+//305
+IF
+  Global("StartEndBios","AR6200",1)
+  InParty("Imoen2")  // Imoen2
+  Global("ImoenBio","GLOBAL",0)
+  OR(2)
+	Dead("Aerie")
+	Global("IRTAerImFriend","GLOBAL",0)
+Global("IRTEpJointMad","GLOBAL",1)
+!Alignment(Player1,MASK_GOOD)
+!Alignment(Player1,MASK_EVIL)
+Global("IRTWantsMarriage","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ImoenBio","GLOBAL",1)
+    TextScreen("IMOE305")
+    SmallWait(1)
+   
+END
+
+//306
+IF
+  Global("StartEndBios","AR6200",1)
+  InParty("Imoen2")  // Imoen2
+  Global("ImoenBio","GLOBAL",0)
+ !Dead("Aerie")
+GlobalGT("IRTAerImFriend","GLOBAL",0)
+Global("IRTEpJointMad","GLOBAL",1)
+!Alignment(Player1,MASK_GOOD)
+!Alignment(Player1,MASK_EVIL)
+!Global("IRTWantsMarriage","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ImoenBio","GLOBAL",1)
+    TextScreen("IMOE306")
+    SmallWait(1)
+   
+END
+
+//307
+IF
+  Global("StartEndBios","AR6200",1)
+  InParty("Imoen2")  // Imoen2
+  Global("ImoenBio","GLOBAL",0)
+  !Dead("Aerie")
+GlobalGT("IRTAerImFriend","GLOBAL",0)
+Global("IRTEpJointMad","GLOBAL",1)
+!Alignment(Player1,MASK_GOOD)
+!Alignment(Player1,MASK_EVIL)
+Global("IRTWantsMarriage","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ImoenBio","GLOBAL",1)
+    TextScreen("IMOE307")
+    SmallWait(1)
+   
+END
+
+//308
+IF
+  Global("StartEndBios","AR6200",1)
+  InParty("Imoen2")  // Imoen2
+  Global("ImoenBio","GLOBAL",0)
+  OR(2)
+	Dead("Aerie")
+	Global("IRTAerImFriend","GLOBAL",0)
+Global("IRTEpJointMad","GLOBAL",1)
+Alignment(Player1,MASK_EVIL)
+!Global("IRTWantsMarriage","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ImoenBio","GLOBAL",1)
+    TextScreen("IMOE308")
+    SmallWait(1)
+   
+END
+
+//309
+IF
+  Global("StartEndBios","AR6200",1)
+  InParty("Imoen2")  // Imoen2
+  Global("ImoenBio","GLOBAL",0)
+  OR(2)
+	Dead("Aerie")
+	Global("IRTAerImFriend","GLOBAL",0)
+Global("IRTEpJointMad","GLOBAL",1)
+Alignment(Player1,MASK_EVIL)
+Global("IRTWantsMarriage","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ImoenBio","GLOBAL",1)
+    TextScreen("IMOE309")
+    SmallWait(1)
+   
+END
+
+//310
+IF
+  Global("StartEndBios","AR6200",1)
+  InParty("Imoen2")  // Imoen2
+  Global("ImoenBio","GLOBAL",0)
+  !Dead("Aerie")
+GlobalGT("IRTAerImFriend","GLOBAL",0)
+Global("IRTEpJointMad","GLOBAL",1)
+Alignment(Player1,MASK_EVIL)
+!Global("IRTWantsMarriage","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ImoenBio","GLOBAL",1)
+    TextScreen("IMOE310")
+    SmallWait(1)
+   
+END
+
+//311
+IF
+  Global("StartEndBios","AR6200",1)
+  InParty("Imoen2")  // Imoen2
+  Global("ImoenBio","GLOBAL",0)
+  !Dead("Aerie")
+GlobalGT("IRTAerImFriend","GLOBAL",0)
+Global("IRTEpJointMad","GLOBAL",1)
+Alignment(Player1,MASK_EVIL)
+Global("IRTWantsMarriage","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ImoenBio","GLOBAL",1)
+    TextScreen("IMOE311")
+    SmallWait(1)
+   
+END
+
+//350
+IF
+  Global("StartEndBios","AR6200",1)
+  InParty("Imoen2")  // Imoen2
+  Global("ImoenBio","GLOBAL",0)
+  OR(2)
+	Dead("Aerie")
+	Global("IRTAerImFriend","GLOBAL",0)
+Global("IRTEpJointStandard","GLOBAL",1)
+Alignment(Player1,MASK_GOOD)
+!Global("IRTWantsMarriage","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ImoenBio","GLOBAL",1)
+    TextScreen("IMOE350")
+    SmallWait(1)
+   
+END
+
+//351
+IF
+  Global("StartEndBios","AR6200",1)
+  InParty("Imoen2")  // Imoen2
+  Global("ImoenBio","GLOBAL",0)
+  OR(2)
+	Dead("Aerie")
+	Global("IRTAerImFriend","GLOBAL",0)
+Global("IRTEpJointStandard","GLOBAL",1)
+Alignment(Player1,MASK_GOOD)
+Global("IRTWantsMarriage","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ImoenBio","GLOBAL",1)
+    TextScreen("IMOE351")
+    SmallWait(1)
+   
+END
+
+
+//352
+IF
+  Global("StartEndBios","AR6200",1)
+  InParty("Imoen2")  // Imoen2
+  Global("ImoenBio","GLOBAL",0)
+  !Dead("Aerie")
+GlobalGT("IRTAerImFriend","GLOBAL",0)
+Global("IRTEpJointStandard","GLOBAL",1)
+Alignment(Player1,MASK_GOOD)
+!Global("IRTWantsMarriage","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ImoenBio","GLOBAL",1)
+    TextScreen("IMOE352")
+    SmallWait(1)
+   
+END
+
+//353
+IF
+  Global("StartEndBios","AR6200",1)
+  InParty("Imoen2")  // Imoen2
+  Global("ImoenBio","GLOBAL",0)
+  !Dead("Aerie")
+GlobalGT("IRTAerImFriend","GLOBAL",0)
+Global("IRTEpJointStandard","GLOBAL",1)
+Alignment(Player1,MASK_GOOD)
+Global("IRTWantsMarriage","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ImoenBio","GLOBAL",1)
+    TextScreen("IMOE353")
+    SmallWait(1)
+   
+END
+
+//354
+IF
+  Global("StartEndBios","AR6200",1)
+  InParty("Imoen2")  // Imoen2
+  Global("ImoenBio","GLOBAL",0)
+  OR(2)
+	Dead("Aerie")
+	Global("IRTAerImFriend","GLOBAL",0)
+Global("IRTEpJointStandard","GLOBAL",1)
+!Alignment(Player1,MASK_GOOD)
+!Alignment(Player1,MASK_EVIL)
+!Global("IRTWantsMarriage","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ImoenBio","GLOBAL",1)
+    TextScreen("IMOE354")
+    SmallWait(1)
+   
+END
+
+//355
+IF
+  Global("StartEndBios","AR6200",1)
+  InParty("Imoen2")  // Imoen2
+  Global("ImoenBio","GLOBAL",0)
+  OR(2)
+	Dead("Aerie")
+	Global("IRTAerImFriend","GLOBAL",0)
+Global("IRTEpJointStandard","GLOBAL",1)
+!Alignment(Player1,MASK_GOOD)
+!Alignment(Player1,MASK_EVIL)
+Global("IRTWantsMarriage","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ImoenBio","GLOBAL",1)
+    TextScreen("IMOE355")
+    SmallWait(1)
+   
+END
+
+//356
+IF
+  Global("StartEndBios","AR6200",1)
+  InParty("Imoen2")  // Imoen2
+  Global("ImoenBio","GLOBAL",0)
+  !Dead("Aerie")
+GlobalGT("IRTAerImFriend","GLOBAL",0)
+Global("IRTEpJointStandard","GLOBAL",1)
+!Alignment(Player1,MASK_GOOD)
+!Alignment(Player1,MASK_EVIL)
+!Global("IRTWantsMarriage","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ImoenBio","GLOBAL",1)
+    TextScreen("IMOE356")
+    SmallWait(1)
+   
+END
+
+//357
+IF
+  Global("StartEndBios","AR6200",1)
+  InParty("Imoen2")  // Imoen2
+  Global("ImoenBio","GLOBAL",0)
+  !Dead("Aerie")
+GlobalGT("IRTAerImFriend","GLOBAL",0)
+Global("IRTEpJointStandard","GLOBAL",1)
+!Alignment(Player1,MASK_GOOD)
+!Alignment(Player1,MASK_EVIL)
+Global("IRTWantsMarriage","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ImoenBio","GLOBAL",1)
+    TextScreen("IMOE357")
+    SmallWait(1)
+   
+END
+
+//358
+IF
+  Global("StartEndBios","AR6200",1)
+  InParty("Imoen2")  // Imoen2
+  Global("ImoenBio","GLOBAL",0)
+  OR(2)
+	Dead("Aerie")
+	Global("IRTAerImFriend","GLOBAL",0)
+Global("IRTEpJointStandard","GLOBAL",1)
+Alignment(Player1,MASK_EVIL)
+!Global("IRTWantsMarriage","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ImoenBio","GLOBAL",1)
+    TextScreen("IMOE358")
+    SmallWait(1)
+   
+END
+
+//359
+IF
+  Global("StartEndBios","AR6200",1)
+  InParty("Imoen2")  // Imoen2
+  Global("ImoenBio","GLOBAL",0)
+  OR(2)
+	Dead("Aerie")
+	Global("IRTAerImFriend","GLOBAL",0)
+Global("IRTEpJointStandard","GLOBAL",1)
+Alignment(Player1,MASK_EVIL)
+Global("IRTWantsMarriage","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ImoenBio","GLOBAL",1)
+    TextScreen("IMOE359")
+    SmallWait(1)
+   
+END
+
+//360
+IF
+  Global("StartEndBios","AR6200",1)
+  InParty("Imoen2")  // Imoen2
+  Global("ImoenBio","GLOBAL",0)
+  !Dead("Aerie")
+GlobalGT("IRTAerImFriend","GLOBAL",0)
+Global("IRTEpJointStandard","GLOBAL",1)
+Alignment(Player1,MASK_EVIL)
+!Global("IRTWantsMarriage","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ImoenBio","GLOBAL",1)
+    TextScreen("IMOE360")
+    SmallWait(1)
+   
+END
+
+//361
+IF
+  Global("StartEndBios","AR6200",1)
+  InParty("Imoen2")  // Imoen2
+  Global("ImoenBio","GLOBAL",0)
+  !Dead("Aerie")
+GlobalGT("IRTAerImFriend","GLOBAL",0)
+Global("IRTEpJointStandard","GLOBAL",1)
+Alignment(Player1,MASK_EVIL)
+Global("IRTWantsMarriage","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ImoenBio","GLOBAL",1)
+    TextScreen("IMOE361")
+    SmallWait(1)
+   
+END
+
+//400
+IF
+  Global("StartEndBios","AR6200",1)
+  InParty("Imoen2")  // Imoen2
+  Global("ImoenBio","GLOBAL",0)
+  !Dead("Aerie")
+  GlobalGT("IRTAerImFriend","GLOBAL",0)
+Global("IRTImAerWishYes","GLOBAL",1)
+!Global("IRTEpSoloMad","GLOBAL",1)
+!Global("IRTEpAscendedFull","GLOBAL",1)
+!Global("IRTEpJointMad","GLOBAL",1)
+!Global("IRTEpSoloStandard","GLOBAL",1)
+!Global("IRTEpAscendedMaiden","GLOBAL",1)
+!Global("IRTEpJointStandard","GLOBAL",1)
+!Global("IRTEpAscendedMaiden2","GLOBAL",1)
+!Global("PlayerChoseEssence","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ImoenBio","GLOBAL",1)
+	SetGlobal("AerieBio","GLOBAL",1)
+    TextScreen("IMOE400")
+    SmallWait(1)
+   
+END
+
+//402
+IF
+  Global("StartEndBios","AR6200",1)
+  InParty("Imoen2")  // Imoen2
+  Global("ImoenBio","GLOBAL",0)
+  !Dead("Aerie")
+  GlobalGT("IRTAerImFriend","GLOBAL",0)
+!Global("IRTImAerWishYes","GLOBAL",1)
+!Global("IRTEpSoloMad","GLOBAL",1)
+!Global("IRTEpAscendedFull","GLOBAL",1)
+!Global("IRTEpJointMad","GLOBAL",1)
+!Global("IRTEpSoloStandard","GLOBAL",1)
+!Global("IRTEpAscendedMaiden","GLOBAL",1)
+!Global("IRTEpJointStandard","GLOBAL",1)
+!Global("IRTEpAscendedMaiden2","GLOBAL",1)
+!Global("PlayerChoseEssence","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ImoenBio","GLOBAL",1)
+    TextScreen("IMOE402")
+    SmallWait(1)
+   
+END

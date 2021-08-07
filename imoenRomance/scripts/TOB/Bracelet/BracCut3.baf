@@ -1,0 +1,17 @@
+IF 
+	True()
+THEN
+	RESPONSE #100
+	CutSceneId(Player1)
+	SetGlobal("IRTLazarusBracelet","GLOBAL",19)
+	ActionOverride("Sorenthis",CreateVisualEffectObject("spunholy",Myself))
+	PlaySound("EFF_P69")
+	 SmallWait(22)
+	//Wait(2)
+	ActionOverride("Sorenthis",DestroySelf())
+	Wait(2)
+	ActionOverride("Imoen2",StartDialogueNoSet(Player1))
+	EndCutSceneMode()
+END
+	
+	

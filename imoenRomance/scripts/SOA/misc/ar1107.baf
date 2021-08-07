@@ -1,0 +1,17 @@
+
+//ranger stonghold 
+//this area script is incorrectly not used for ar1107 (ranger cabin) because they re-used the merella cabin (ar1102) but we leave this in case other mods or fixes actually make it ar1107, its a copy of ar1102.baf
+IF
+	Global("MRStrongholdTalkRan","GLOBAL",0)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+    Global("MRStrongholdTalkUmar","GLOBAL",2)
+	GlobalGT("RangerProtector","GLOBAL",0)
+	InParty("Imoen2")
+	!ActuallyInCombat()
+	AreaCheckObject("AR1107","Imoen2")
+	AreaCheckObject("AR1107",Player1)
+THEN
+	RESPONSE #100
+	SetGlobal("MRStrongholdTalkRan","GLOBAL",1)
+	ActionOverride("Imoen2",StartDialogueNoSet(Player1))
+END

@@ -1,0 +1,33 @@
+IF
+   True()
+THEN
+   RESPONSE #100
+   CutSceneID(Player1)
+   StartCutSceneMode() 
+	FadeToColor([30.0],0) 
+	Wait(2) 
+	StorePartyLocations()
+	JumpToPoint([926.1041])
+	//JumpToPoint([930.1038])
+	//Face(E)
+	//Face(12)
+	ActionOverride(Player2,JumpToPoint([794.338]))
+	ActionOverride(Player3,JumpToPoint([791.417]))
+	ActionOverride(Player4,JumpToPoint([831.388]))
+	ActionOverride(Player5,JumpToPoint([819.449]))
+	ActionOverride(Player6,JumpToPoint([874.418]))
+	
+	ActionOverride("Imoen2",JumpToPoint([1021.1076]))
+	//ActionOverride("Imoen2",Face(NNW))
+	//ActionOverride("Imoen2",Face(7))
+	//some kind of bug, gotta do facobject imoen twice for it to work properly
+	//FaceObject("Imoen2")
+	ActionOverride("Imoen2",FaceObject(Player1))
+	//FaceObject("Imoen2")
+	Wait(1) 
+	FaceObject("Imoen2")
+	FadeFromColor([30.0],0) 
+	Wait(2)
+	ActionOverride("Imoen2",StartDialogueNoSet(Player1))
+	EndCutSceneMode()
+END

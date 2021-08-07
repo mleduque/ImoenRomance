@@ -1,0 +1,41 @@
+/* For the Gorion Wraith event. Starts the whole thing as soon as the player walks into the area */
+
+IF
+   OnCreation()
+   InParty("Imoen2")
+   Global("ImoenRomanceActive","GLOBAL",2)
+   Global("IRTEnterMyr","GLOBAL",0)
+THEN
+   RESPONSE #100
+      SetGlobal("IRTEnterMyr","GLOBAL",1)
+      ActionOverride(Player1,SetDialog("Player1"))
+      ClearAllActions()
+      StartCutSceneMode()
+      CreateCreature("MRDREPPI",[2000.1300],15)
+      CreateCreature("MRPHLYDI",[2110.1405],0)
+	  
+	  CreateCreature("MRKHALID",[1397.1366],14) 
+	  ActionOverride("MRKHALID",FaceObject(Player1)) 
+	  CreateCreature("MRREEVOR",[1853.1424],14) 
+	  ActionOverride("MRREEVOR",FaceObject(Player1)) 
+	  CreateCreature("MRJONDAL",[1777.1450],14) 
+	  ActionOverride("MRJONDAL",FaceObject(Player1)) 
+	  CreateCreature("MROBE",[1670.1470],13) 
+	  ActionOverride("MROBE",FaceObject(Player1)) 
+	  CreateCreature("MRHULL",[1715.1380],13) 
+	  ActionOverride("MRHULL",FaceObject(Player1)) 
+	  CreateCreature("MRFULLER",[1690.1420],15) 
+	  ActionOverride("MRFULLER",FaceObject(Player1)) 
+	  
+	  
+      ActionOverride(Player1,MoveToPoint([2190.1710]))
+      ActionOverride(Player2,MoveToPoint([2200.1740]))
+      ActionOverride(Player3,MoveToPoint([2100.1780]))
+      ActionOverride(Player4,MoveToPoint([2150.1820]))
+      ActionOverride(Player5,MoveToPoint([2200.1790]))
+      ActionOverride(Player6,MoveToPoint([2250.1760]))
+      MoveViewObject("MRPHLYDI",2)
+      Wait(6)
+      EndCutSceneMode()
+      ActionOverride(Player1,StartDialog("Player1",Player1))
+END

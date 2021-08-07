@@ -1,0 +1,17 @@
+
+IF 
+	!Exists("Sorenthis")
+	Dead("Xaglaroth")
+	!Dead("Imoen2")
+	InParty("Imoen2")
+	!ActuallyInCombat()
+	Global("IRTXagKilled","GLOBAL",0)
+	OR(2)
+   PartyHasItem("MRIMRIN1")
+   HasItemEquiped("MRIMRIN1","Imoen2")
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+	StartCutScene("BracCut9")
+
+END

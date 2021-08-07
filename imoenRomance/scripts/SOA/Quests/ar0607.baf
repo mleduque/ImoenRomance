@@ -1,0 +1,13 @@
+/*In circus first time imoen comment */
+//everyone must be in the area
+IF
+	InParty("Imoen2")
+	!ActuallyInCombat()
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+    !StateCheck("Imoen2",CD_STATE_NOTVALID)
+	Global("MRCircus","GLOBAL",2)
+THEN
+	RESPONSE #100
+	SetGlobal("MRCircus","GLOBAL",3)
+	ActionOverride("Imoen2",StartDialogueNoSet(Player1))
+END

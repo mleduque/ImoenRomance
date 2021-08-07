@@ -1,0 +1,12 @@
+//from quality times 6
+IF
+	True()
+THEN
+	RESPONSE #100
+	CutSceneId("Imoen2")
+	MoveViewObject("Imoen2",4)
+	ActionOverride(Player1,MoveToObject("Imoen2"))
+	Wait(4)
+	SetGlobal("MRLT6Nightmare","GLOBAL",1)
+	StartDialogueNoSet(Player1)
+END

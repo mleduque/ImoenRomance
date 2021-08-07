@@ -1,0 +1,68 @@
+//sendai boss room.
+
+//after 2nd solar talk when the first of either senda or abazigail dies solarpresent talk
+IF
+  Global("TalkedToSolar","GLOBAL",4)
+   Global("IRTSolarPresentTalk","GLOBAL",0)
+   !Global("ImoenRomanceActive","GLOBAL",3)
+   !Global("IRTShutUp","GLOBAL",1)
+   !StateCheck(Player1,CD_STATE_NOTVALID)
+	!StateCheck("Imoen2",CD_STATE_NOTVALID)
+	 IsValidForPartyDialog("Imoen2")
+	Global("IRTSolarPresentDelayTimer","GLOBAL",0)
+	
+THEN
+   RESPONSE #100
+   	RealSetGlobalTimer("IRTSolarPresentDelayTimer","GLOBAL",4)
+END
+
+IF
+  Global("TalkedToSolar","GLOBAL",4)
+   Global("IRTSolarPresentTalk","GLOBAL",0)
+   !Global("ImoenRomanceActive","GLOBAL",3)
+   !Global("IRTShutUp","GLOBAL",1)
+   !StateCheck(Player1,CD_STATE_NOTVALID)
+	!StateCheck("Imoen2",CD_STATE_NOTVALID)
+	 RealGlobalTimerExpired("IRTSolarPresentDelayTimer","GLOBAL")
+	 !ActuallyInCombat()
+	  IsValidForPartyDialog("Imoen2")
+THEN
+   RESPONSE #100
+   SetGlobal("IRTSolarPresentTalk","GLOBAL",1)
+	ActionOverride("Imoen2",StartDialogueNoSet(Player1))
+END
+
+ 
+//After talk when 2nd last five dies either this or sendai triggers solarfive talk
+IF
+  Global("TalkedToSolar","GLOBAL",5)
+   Global("IRTSolarFiveTalk","GLOBAL",0)
+   !Global("ImoenRomanceActive","GLOBAL",3)
+   !Global("IRTShutUp","GLOBAL",1)
+    IsValidForPartyDialog("Imoen2")
+     !StateCheck(Player1,CD_STATE_NOTVALID)
+	!StateCheck("Imoen2",CD_STATE_NOTVALID)
+	Global("IRTSolarFiveTalkDelayTimer","GLOBAL",0)
+THEN
+   RESPONSE #100
+  	RealSetGlobalTimer("IRTSolarFiveTalkDelayTimer","GLOBAL",4)
+END
+
+//After talk when 2nd last five dies either this or sendai triggers solarfive talk
+IF
+  Global("TalkedToSolar","GLOBAL",5)
+   Global("IRTSolarFiveTalk","GLOBAL",0)
+   !Global("ImoenRomanceActive","GLOBAL",3)
+   !Global("IRTShutUp","GLOBAL",1)
+    IsValidForPartyDialog("Imoen2")
+     !StateCheck(Player1,CD_STATE_NOTVALID)
+	!StateCheck("Imoen2",CD_STATE_NOTVALID)
+	 RealGlobalTimerExpired("IRTSolarFiveTalkDelayTimer","GLOBAL")
+	 !ActuallyInCombat()
+THEN
+   RESPONSE #100
+   SetGlobal("IRTSolarFiveTalk","GLOBAL",1)
+	ActionOverride("Imoen2",StartDialogueNoSet(Player1))
+END
+
+

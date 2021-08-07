@@ -1,0 +1,14 @@
+//Jaheira party reaction
+IF
+		Global("MRJaheiraReaction","GLOBAL",0)
+		Global("MRSleptImoen","GLOBAL",1)
+		IsValidForPartyDialog("Imoen2")
+		IsValidForPartyDialog("Jaheira")
+		Global("ImoenRomanceActive","GLOBAL",2)
+		GlobalTimerExpired("MRPartyReactionTimer","GLOBAL")
+THEN
+	RESPONSE #100
+	SetGlobal("MRJaheiraReaction","GLOBAL",1) 
+	SetGlobalTimer("MRPartyReactionTimer","GLOBAL",ONE_DAY)
+	StartDialogueNoSet(Player1)
+END

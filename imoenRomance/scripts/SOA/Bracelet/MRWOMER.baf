@@ -1,0 +1,10 @@
+IF
+  Detect(Player1)
+  Detect("Imoen2")
+  Global("MRRingSellImoen","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("MRRingSellImoen","GLOBAL",1)
+    ActionOverride(Player1,StartDialogue("Player1",Player1))
+END
+

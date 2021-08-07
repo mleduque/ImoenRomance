@@ -1,0 +1,50 @@
+
+IF 
+	True()
+THEN
+	RESPONSE #100
+	CutSceneId(Player1)
+	JumpToPoint([2357.642])
+	ApplySpellRES("SPISLP2",Player1)
+	Wait(1)
+	//FadeFromColor([30.0],0)
+	Wait(1)
+	StartCutScene("LoveMe3z")
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+	CutSceneId(Player2)
+	JumpToPoint([2311.591])
+	ApplySpellRES("SPISLP1",Player2)
+END
+
+
+IF
+	True()
+THEN
+	RESPONSE #100
+	CutSceneId(Player4)
+	JumpToPoint([2216.691])
+	ApplySpellRES("SPISLP1",Player4)
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+	CutSceneId(Player5)
+	JumpToPoint([2180.640])
+	ApplySpellRES("SPISLP1",Player5)
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+	CutSceneId(Player6)
+	JumpToPoint([2231.591])
+	ApplySpellRES("SPISLP1",Player6)
+END

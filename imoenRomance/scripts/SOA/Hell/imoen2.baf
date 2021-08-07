@@ -1,0 +1,74 @@
+//imoen reply to specific companion being taken
+IF
+	OR(5)
+	Global("MRHellTookAerie","GLOBAL",1)
+	Global("MRHellTookJaheira","GLOBAL",1)
+	Global("MRHellTookNalia","GLOBAL",1)
+	Global("MRHellTookMinsc","GLOBAL",1)
+	Global("MRHellTookKeldorn","GLOBAL",1)
+	
+	Global("MRSelfishTalk","GLOBAL",0)
+	Global("Player1Selfish","GLOBAL",0)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+    !StateCheck("Imoen2",CD_STATE_NOTVALID)
+	InParty("Imoen2")
+	!ActuallyInCombat()
+	See(Player1)
+THEN
+	RESPONSE #100
+	SetGlobal("MRSelfishTalk","GLOBAL",1)
+	ActionOverride("Imoen2",StartDialogueNoSet(Player1))
+END
+
+//imoen reply to nonspecific companion being taken
+IF
+	Global("MRHellTookNPC","GLOBAL",1)
+	
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+    !StateCheck("Imoen2",CD_STATE_NOTVALID)
+	Global("MRSelfishTalk","GLOBAL",0)
+	InParty("Imoen2")
+	!ActuallyInCombat()
+	See(Player1)
+	AreaCheck("AR2904")
+THEN
+	RESPONSE #100
+	SetGlobal("MRSelfishTalk","GLOBAL",1)
+	ActionOverride("Imoen2",StartDialogueNoSet(Player1))
+END
+
+
+//imoen reply to aerie being revived after being taken and you chose selfish choice
+IF
+	!Dead("Aerie")
+	Global("MRHellTookAerie","GLOBAL",1)
+	Global("MRSelfishTalk","GLOBAL",2)
+	Global("Player1Selfish","GLOBAL",2)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+    !StateCheck("Imoen2",CD_STATE_NOTVALID)
+	InParty("Imoen2")
+	!ActuallyInCombat()
+	See("Aerie")
+	AreaCheck("AR2904")
+THEN
+	RESPONSE #100
+	SetGlobal("MRSelfishTalk","GLOBAL",3)
+	ActionOverride("Imoen2",StartDialogueNoSet(Player1))
+END
+
+//imoen reply to aerie after being released when you picked selfless choice
+IF
+	Global("MRHellTookAerie","GLOBAL",1)
+	Global("MRSelfishTalk","GLOBAL",2)
+	Global("Player1Selfish","GLOBAL",1)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+    !StateCheck("Imoen2",CD_STATE_NOTVALID)
+	InParty("Imoen2")
+	See("Aerie")
+	AreaCheck("AR2904")
+	!ActuallyInCombat()
+THEN
+	RESPONSE #100
+	SetGlobal("MRSelfishTalk","GLOBAL",3)
+	ActionOverride("Imoen2",StartDialogueNoSet(Player1))
+END

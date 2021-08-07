@@ -1,0 +1,103 @@
+
+
+//Lilarcor banter
+IF
+	Global("MRLilarcor","GLOBAL",0)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+    
+	InParty("Imoen2")
+	See(Player1)
+	!ActuallyInCombat()
+	GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+	AreaType(CITY)
+	PartyHasItem("SW2H14")
+THEN
+	RESPONSE #100
+	CreateCreatureObject("MRLILCOR","Imoen2",0,0,0)
+	SetGlobal("MRLilarcor","GLOBAL",1)
+	StartDialogNoSet(Player1)
+END
+
+//Lilarcor banter 2
+IF
+	RealGlobalTimerExpired("MRLilarcorTimer","GLOBAL")
+	Global("MRLilarcor","GLOBAL",2)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+    
+	InParty("Imoen2")
+	See(Player1)
+	!ActuallyInCombat()
+	GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
+	AreaType(CITY)
+	PartyHasItem("SW2H14")
+THEN
+	RESPONSE #100
+	CreateCreatureObject("MRLILCOR","Imoen2",0,0,0)
+	SetGlobal("MRLilarcor","GLOBAL",3)
+	ActionOverride("MRLILCOR",StartDialogNoSet(Player1))
+END
+
+
+/* Imoen Aerie friendship talk */
+IF
+	RealGlobalTimerExpired("MRAerieFriendshipTimer","GLOBAL")
+	IsValidForPartyDialog("Aerie")
+	!ActuallyInCombat()
+	See("Aerie")
+	See(Player1)
+	OR(3)
+		Global("MRAerImFriend","GLOBAL",2)
+		Global("MRAerImFriend","GLOBAL",6)
+		Global("MRAerImFriend","GLOBAL",9)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck("Imoen2",CD_STATE_NOTVALID)
+	 !AreaCheck("ar2500")
+	 !AreaCheck("ar1500")
+	 OR(3)
+		!AreaType(DUNGEON)
+		AreaCheck("AR2100")
+		AreaCheck("AR2200")
+THEN
+  RESPONSE #100
+    IncrementGlobal("MRAerImFriend","GLOBAL",1)
+	StartDialogNoSet(Player1)
+END
+
+/* The last Imoen-Aerie talk in terms of dialogue has a couple of factors, it assumes bodhi is dead and it assumes a possible romance/not romanced dialogue path
+   So we set the timer after bodhi died and after the romance is concluded (whether romanced or break up)
+   note also we play a trick with MRAerImFriend global and increment it so this code block cant execute twice in succession
+ */
+IF
+	Global("BodhiDead","GLOBAL",1)
+	!Global("ImoenRomanceActive","GLOBAL",1)
+	Global("MRAerImFriend","GLOBAL",11)
+THEN
+	RESPONSE #100
+	RealSetGlobalTimer("MRAerieFriendshipTimer","GLOBAL",800)
+	SetGlobal("MRAerImFriend","GLOBAL",12)
+END
+
+
+/* imoen aerie talk but here player needs to talk to himself first */
+IF
+	RealGlobalTimerExpired("MRAerieFriendshipTimer","GLOBAL")
+	IsValidForPartyDialog("Aerie")
+	!ActuallyInCombat()
+	See("Aerie")
+	See(Player1)
+    Global("MRAerImFriend","GLOBAL",12)
+	!StateCheck("Imoen2",CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+	 !AreaCheck("ar2500")
+	 !AreaCheck("ar1500")
+	 OR(3)
+		!AreaType(DUNGEON)
+		AreaCheck("AR2100")
+		AreaCheck("AR2200")
+THEN
+  RESPONSE #100
+    IncrementGlobal("MRAerImFriend","GLOBAL",1)
+	ActionOverride(Player1,StartDialogue("Player1",Player1))
+END

@@ -1,0 +1,43 @@
+IF
+   True()
+THEN
+   RESPONSE #100
+   CutSceneID(Player1)
+   Wait(2)
+   ActionOverride("MRYWin2",PlayDeadInterruptable(10000))
+   Wait(1)
+   CreateVisualEffect("SPFLESHS",[1953.1320])
+   CreateVisualEffect("SPFLESHS",[1880.1495])
+   Wait(2)
+   ActionOverride("MRYIm",DestroySelf())
+   ActionOverride("MRKiller",DestroySelf())
+   Wait(3)
+   CreateVisualEffect("SPRWRA2I",[1999.1200]) //no vvc
+   SmallWait(28)
+   CreateVisualEffect("SPPOWRRD",[1997.1300])
+   PlaySound("EFF_M18a")
+   Wait(2)
+   CreateCreature("d1gori",[2005.1300],16)
+   Wait(4)
+   ActionOverride("d1gori",StartDialogNoSet(Player1))
+END
+
+IF
+   True()
+THEN
+   RESPONSE #100
+   CutSceneID("Imoen2")
+   MoveViewPoint([1953.1320],1)
+END
+
+IF
+   True()
+THEN
+   RESPONSE #100
+   CutSceneID("MRJaenya")
+   Wait(2)
+   DestroyItem("CLCK14")
+   ApplySpell(Myself,SLAVE_CHUNK)
+   Wait(3)
+   DestroySelf()
+END

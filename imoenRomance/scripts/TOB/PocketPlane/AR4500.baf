@@ -1,0 +1,59 @@
+//joined and need to introduce
+IF
+   Global("IRTJustJoined","GLOBAL",1)
+   IsValidForPartyDialog("Imoen2")
+   OR(15)
+   InParty("Sarevok")
+   InParty("Aerie")
+   InParty("Jan")
+   InParty("Jaheira")
+   InParty("Minsc")
+   InParty("Viconia")
+   InParty("Korgan")
+   InParty("Nalia")
+   InParty("Mazzy")
+   InParty("Keldorn")
+   InParty("Cernd")
+   InParty("Valygar")
+   InParty("HaerDalis")
+   InParty("Anomen")
+   InParty("Edwin")
+THEN
+   RESPONSE #100
+    SetGlobal("IRTJustJoined","GLOBAL",2)
+	ActionOverride("Imoen2",StartDialogueNoSet(Player1))
+END
+
+//joined with no one else in party to introduce
+IF
+   Global("IRTJustJoined","GLOBAL",1)
+   IsValidForPartyDialog("Imoen2")
+   !InParty("Sarevok")
+   !InParty("Aerie")
+   !InParty("Jan")
+   !InParty("Jaheira")
+   !InParty("Minsc")
+   !InParty("Viconia")
+   !InParty("Korgan")
+   !InParty("Nalia")
+   !InParty("Mazzy")
+   !InParty("Keldorn")
+   !InParty("Cernd")
+   !InParty("Valygar")
+   !InParty("HaerDalis")
+   !InParty("Anomen")
+   !InParty("Edwin")
+THEN
+   RESPONSE #100
+    SetGlobal("IRTJustJoined","GLOBAL",3)
+END
+
+IF
+   PartyRested()
+   IsValidForPartyDialog("Imoen2")
+   Global("IRTRestedInPocketPlane","GLOBAL",0)
+THEN
+   RESPONSE #100
+   SetGlobal("IRTRestedInPocketPlane","GLOBAL",1)
+	ActionOverride("Imoen2",StartDialogueNoSet(Player1))
+END

@@ -1,0 +1,13 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+ Wait(1)
+		CreateVisualEffect("SPFLESHS",[1554.1328])
+		Wait(1)
+		CreateCreature("MRWINTHR",[1554.1328],14) // Winthrop
+ Wait(2)
+		ActionOverride("MRWINTHR",StartDialogue("MRWINTHR",Player1))
+END
+

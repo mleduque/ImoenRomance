@@ -1,0 +1,9 @@
+IF
+  Global("IRTKilledForestMerchant","GLOBAL",1)
+  Dead("hgkar01")
+   IsValidForPartyDialog("Imoen2")
+THEN
+   RESPONSE #100
+    SetGlobal("IRTKilledForestMerchant","GLOBAL",2)
+	ActionOverride("Imoen2",StartDialogueNoSet(Player1))
+END

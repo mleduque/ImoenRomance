@@ -1,0 +1,18 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("hgwra01")
+		CreateVisualEffectObject("SPIMPFR",Player1)
+		CreateVisualEffectObject("SPIMPFR","Imoen2")
+		Wait(1)
+		CreateVisualEffectObject("SPIMPPT",Player1)
+		CreateVisualEffectObject("SPIMPPT","Imoen2")
+		Wait(1)
+		CreateVisualEffectObject("SPFIREPI",Player1)
+		CreateVisualEffectObject("SPFIREPI","Imoen2")
+		ApplyDamage(Player1,20,FIRE)
+		ApplyDamage("Imoen2",5,FIRE)
+		Wait(2)
+		StartDialogueNoSet(Player1)
+END

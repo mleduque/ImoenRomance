@@ -1,0 +1,23 @@
+//prompt to sleep at campfire
+
+IF
+  InParty(Myself)
+  Global("MRCampSleepTalk","GLOBAL",0) //havent slept at camp
+   Global("MRCampPrompt","GLOBAL",0)
+  
+   Global("ImoenRomanceActive","GLOBAL",1)
+   RealGlobalTimerExpired("MRCampPromptTimer","GLOBAL")
+   GlobalGT("MRLoveTalk","GLOBAL",9)
+   Global("ElhanFinishedSpeaking","GLOBAL",1)
+   GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%) //after underdark
+   !AreaCheck("AR2500")
+   !AreaType(DUNGEON)
+    !StateCheck(Player1,CD_STATE_NOTVALID)
+   !StateCheck(Myself,CD_STATE_NOTVALID)
+   See(Player1)
+THEN
+  RESPONSE #100
+	SetGlobal("MRCampPrompt","GLOBAL",1)
+    StartDialogueNoSet(Player1)
+END
+

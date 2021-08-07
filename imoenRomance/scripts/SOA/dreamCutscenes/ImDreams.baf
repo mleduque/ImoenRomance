@@ -1,0 +1,106 @@
+IF
+    Global("HadJonDream2","GLOBAL",1)
+    Global("HaveNotHadAnyImoenDreams","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("HaveNotHadAnyImoenDreams","GLOBAL",1)
+        SetGlobalTimer("ImoenDreamRomance1","GLOBAL",ONE_DAY)
+END
+
+IF
+    Gender(Player1,MALE)
+    Global("HaveNotHadAnyImoenDreams","GLOBAL",1)
+	!Global("ImoenRomanceActive","GLOBAL",4)
+    GlobalTimerExpired("ImoenDreamRomance1","GLOBAL")
+    Global("HadImoenDreamRomance1","GLOBAL",0)
+    GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)
+	!AreaCheck("AR0334")
+THEN
+    RESPONSE #100
+        SetGlobal("HadImoenDreamRomance1","GLOBAL",1)
+        SetGlobalTimer("ImoenDreamRomance2","GLOBAL",12200)
+	  ClearAllActions()
+        StartCutSceneMode()
+        StartCutScene("Cutim00")
+END
+
+IF
+    Gender(Player1,FEMALE)
+    Global("HaveNotHadAnyImoenDreams","GLOBAL",1)
+   !Global("ImoenRomanceActive","GLOBAL",4)
+    GlobalTimerExpired("ImoenDreamRomance1","GLOBAL")
+    Global("HadImoenDreamRomance1","GLOBAL",0)
+    GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)
+	!AreaCheck("AR0334")
+THEN
+    RESPONSE #100
+        SetGlobal("HadImoenDreamRomance1","GLOBAL",1)
+        SetGlobalTimer("ImoenDreamRomance2","GLOBAL",12200)
+     	  ClearAllActions()  
+	  StartCutSceneMode()
+        StartCutScene("CutiF00")
+END
+
+IF
+    Gender(Player1,MALE)
+   !Global("ImoenRomanceActive","GLOBAL",4)
+    GlobalTimerExpired("ImoenDreamRomance2","GLOBAL")
+    Global("HadImoenDreamRomance2","GLOBAL",0)
+    GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)
+	!AreaCheck("AR0334")
+THEN
+    RESPONSE #100
+        SetGlobal("HadImoenDreamRomance2","GLOBAL",1)
+        SetGlobalTimer("ImoenDreamRomance3","GLOBAL",14400)
+	  ClearAllActions()
+        StartCutSceneMode()
+        StartCutScene("Cutim05")
+END
+
+IF
+    Gender(Player1,FEMALE)
+   !Global("ImoenRomanceActive","GLOBAL",4)
+    GlobalTimerExpired("ImoenDreamRomance2","GLOBAL")
+    Global("HadImoenDreamRomance2","GLOBAL",0)
+    GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)
+	!AreaCheck("AR0334")
+THEN
+    RESPONSE #100
+        SetGlobal("HadImoenDreamRomance2","GLOBAL",1)
+        SetGlobalTimer("ImoenDreamRomance3","GLOBAL",14400)
+	  ClearAllActions() 
+        StartCutSceneMode()
+        StartCutScene("CutiF05")
+END
+
+IF
+    Gender(Player1,MALE)
+    !Global("ImoenRomanceActive","GLOBAL",4)
+    GlobalTimerExpired("ImoenDreamRomance3","GLOBAL")
+    Global("HadImoenDreamRomance3","GLOBAL",0)
+    GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)
+	!AreaCheck("AR0334")
+THEN
+    RESPONSE #100
+        SetGlobal("HadImoenDreamRomance3","GLOBAL",1)
+	  ClearAllActions()
+        StartCutSceneMode()
+        StartCutScene("Cutim11")
+END
+
+IF
+    Gender(Player1,FEMALE)
+   !Global("ImoenRomanceActive","GLOBAL",4)
+    GlobalTimerExpired("ImoenDreamRomance3","GLOBAL")
+    Global("HadImoenDreamRomance3","GLOBAL",0)
+    GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)
+	!AreaCheck("AR0334")
+THEN
+    RESPONSE #100
+        SetGlobal("HadImoenDreamRomance3","GLOBAL",1)
+	  ClearAllActions()
+        StartCutSceneMode()
+        StartCutScene("CutiF11")
+END
+
+

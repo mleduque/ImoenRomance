@@ -1,0 +1,14 @@
+/* sleep in underdark exit campfire cutscene */
+IF
+  InParty(Myself)
+  Global("MRCampfire","GLOBAL",1)
+  Global("ImoenRomanceActive","GLOBAL",1)
+  Global("MRCampSleepTalk","GLOBAL",0)
+   GlobalGT("MRLoveTalk","GLOBAL",9)
+   AreaCheck("AR2500")
+THEN
+  RESPONSE #100
+  SetGlobal("MRCampPrompt","GLOBAL",5)
+    SetGlobal("MRCampSleepTalk","GLOBAL",1)
+    StartDialogueNoSet(Player1)
+END

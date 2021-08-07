@@ -1,0 +1,23 @@
+IF 
+	True()
+THEN
+	RESPONSE #100
+	CutSceneId("Imoen2")
+	CreateVisualEffectObject("Spwhirl","Xaglaroth") 
+	PlaySound("EFF_M108")
+	Wait(2)
+	CreateVisualEffectObject("spfleshs","Xaglaroth") 
+	PlaySound("EFF_M10")
+    Wait(2)	
+	ActionOverride(Player1,DestroyItem("MRIMRIN1"))
+	ActionOverride(Player2,DestroyItem("MRIMRIN1"))
+	ActionOverride(Player3,DestroyItem("MRIMRIN1"))
+	ActionOverride(Player4,DestroyItem("MRIMRIN1"))
+	ActionOverride(Player5,DestroyItem("MRIMRIN1"))
+	ActionOverride(Player6,DestroyItem("MRIMRIN1"))
+	ActionOverride(Player1,GiveItemCreate("MRIMRIN2","Imoen2",1,1,0)) 
+	ActionOverride(Player1,GivePartyGold(31344))
+	ActionOverride("Xaglaroth",StartDialogueNoSet(Player1))
+	EndCutSceneMode()
+END
+	

@@ -1,0 +1,15 @@
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId("youngeri")
+	  MoveViewObject("youngerc",VERY_FAST)
+	  ActionOverride("Youngerc",Face(14))
+        MoveToPointNoRecticle([778.1544])
+	  Wait(1)
+        SetGlobal("MRDream2","GLOBAL",4)
+        ActionOverride("Youngerc",StartDialogNoSet(Player1))
+        EndCutSceneMode()
+END
+
+

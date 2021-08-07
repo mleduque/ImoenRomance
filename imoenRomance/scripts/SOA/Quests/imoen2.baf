@@ -1,0 +1,42 @@
+/*see circus first time imoen comment */
+IF
+	InParty("Imoen2")
+	!ActuallyInCombat()
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+    !StateCheck("Imoen2",CD_STATE_NOTVALID)
+	AreaCheck("ar0700")
+	See("tran0600")
+	Global("MRCircus","GLOBAL",0)
+THEN
+	RESPONSE #100
+	SetGlobal("MRCircus","GLOBAL",1)
+	StartDialogueNoSet(Player1)
+END
+
+//council building imoen talk to tolgerias
+IF
+	AreaCheck("ar1002")
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+	InParty("Imoen2")
+	See("tolger")
+	Global("MRImoenCowl","GLOBAL",0)
+THEN
+	RESPONSE #100
+	SetGlobal("MRImoenCowl","GLOBAL",1)
+	ActionOverride("Imoen2",StartDialogueNoSet(Player1))
+END
+
+
+/*Gong dialogue */
+IF
+	IsValidForPartyDialog("Imoen2")
+	!ActuallyInCombat()
+	See(Player1)
+	PartyHasItem("misc6b")
+	Global("MRGongTalk","GLOBAL",0)
+THEN
+	RESPONSE #100
+	SetGlobal("MRGongTalk","GLOBAL",1)
+	StartDialogueNoSet(Player1)
+END

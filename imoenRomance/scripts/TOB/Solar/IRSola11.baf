@@ -1,0 +1,17 @@
+IF
+   True()
+THEN
+   RESPONSE #100
+   CutSceneID(Player1)
+   SmallWait(8) 
+   ActionOverride("MRYWin3",PlayDeadInterruptable(100)) 
+   ActionOverride("d1gori",PlayDeadInterruptable(100))
+   SmallWait(12)
+   CreateVisualEffectObject("ICFIRSDI","MRYWin3") 
+   CreateVisualEffectObject("ICFIRSDI","d1gori") 
+   SmallWait(9)
+   ActionOverride("MRYWin3",DestroySelf()) 
+   ActionOverride("d1gori",DestroySelf())
+   Wait(2) 
+   ActionOverride("SOLAR",StartDialog("SOLAR",Player1))
+END

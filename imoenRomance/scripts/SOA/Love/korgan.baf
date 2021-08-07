@@ -1,0 +1,17 @@
+
+//Korgan party reaction
+IF
+	Global("MRKorganReaction","GLOBAL",0)
+	Global("MRSleptImoen","GLOBAL",1)
+	Gender(PLAYER1,FEMALE)
+	AreaType(OUTDOOR)
+	IsValidForPartyDialog("Imoen2")
+	IsValidForPartyDialog("Korgan")
+	Global("ImoenRomanceActive","GLOBAL",2)
+	GlobalTimerExpired("MRPartyReactionTimer","GLOBAL")
+THEN
+	RESPONSE #100
+	SetGlobal("MRKorganReaction","GLOBAL",1) 
+	SetGlobalTimer("MRPartyReactionTimer","GLOBAL",ONE_DAY)
+	StartDialogueNoSet(Player1)
+END

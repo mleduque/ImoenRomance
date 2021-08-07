@@ -1,0 +1,17 @@
+IF
+   True()
+THEN
+   RESPONSE #100
+   CutSceneID(Player1)
+   MoveViewPoint([1953.1355],INSTANT)
+   Wait(1)
+	CreateVisualEffect("SPSTRENH",[1953.1355])
+	CreateVisualEffect("SPSTRENH",[1903.1305])
+	CreateVisualEffect("SPSTRENH",[2003.1305])
+	Wait(1)
+	CreateCreature("MRTarren",[1953.1355],15)
+	CreateCreature("MRYWin",[1903.1305],15)
+	CreateCreature("MRNevea",[2003.1305],15)
+	Wait(3)
+	ActionOverride("MRNevea",StartDialog("MRNevea",Player1))
+END

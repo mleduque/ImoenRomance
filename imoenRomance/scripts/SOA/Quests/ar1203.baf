@@ -1,0 +1,26 @@
+/* firkraag kill with imoen */
+//everyone must be in the area
+IF
+	InParty("Imoen2")
+	ActuallyInCombat()
+	Dead("firkra02")
+	Exists("firkra02")
+	Global("MRFirkraag","GLOBAL",0)
+THEN
+	RESPONSE #100
+	SetGlobal("MRFirkraag","GLOBAL",1)
+END
+
+IF
+	InParty("Imoen2")
+	!ActuallyInCombat()
+	Global("MRFirkraag","GLOBAL",1)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+    !StateCheck("Imoen2",CD_STATE_NOTVALID)
+	Global("MRShadowDragon","GLOBAL",0)
+	Global("MRDragonKillTalk","GLOBAL",0)
+THEN
+	RESPONSE #100
+	SetGlobal("MRDragonKillTalk","GLOBAL",1)
+	ActionOverride("Imoen2",StartDialogueNoSet(Player1))
+END

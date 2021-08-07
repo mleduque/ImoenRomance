@@ -1,0 +1,11 @@
+IF
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+    !StateCheck("Imoen2",CD_STATE_NOTVALID)
+	InParty("Imoen2")
+	!ActuallyInCombat()
+	Global("MRSuldComment","GLOBAL",0)
+THEN
+	RESPONSE #100
+	SetGlobal("MRSuldComment","GLOBAL",1)
+    ActionOverride("Imoen2",StartDialogueNoSet(Player1))
+END

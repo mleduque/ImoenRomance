@@ -1,0 +1,57 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("hgwra01")
+		ScreenShake([20.20],20)
+		Wait(4)
+		StartDialogueNoSet(Player1)
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		PlayDead(45)
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player2)
+		PlayDead(40)
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player3)
+		PlayDead(20)
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player4)
+		PlayDead(30)
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player5)
+		PlayDead(40)
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player6)
+		PlayDead(25)
+END

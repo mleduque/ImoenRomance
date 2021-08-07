@@ -1,0 +1,17 @@
+IF
+   True()
+THEN
+   RESPONSE #100
+   CutSceneID(Player1)
+   MoveViewPoint([1953.1355],INSTANT)
+   Wait(1)
+   CreateVisualEffect("SPDEATH3",[2003.1300])
+   SmallWait(4)
+   CreateVisualEffect("SPDEATH3",[1953.1350])
+   Wait(1)
+   ActionOverride("MRNevea",Polymorph("ELEMENTAL_AIR_SMALL"))
+   SmallWait(4)
+   ActionOverride("MRTarren",Polymorph("ELEMENTAL_AIR_SMALL"))
+   Wait(2)
+   ActionOverride("MRNevea",StartDialog("MRNevea","MRNevea"))
+END

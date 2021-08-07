@@ -1,0 +1,11 @@
+
+IF
+	ActuallyInCombat()
+	Global("Attacked","LOCALS",0)
+THEN
+	RESPONSE #100
+	SetGlobal("Attacked","LOCALS",1)
+	Shout(89)
+	Continue()
+END
+

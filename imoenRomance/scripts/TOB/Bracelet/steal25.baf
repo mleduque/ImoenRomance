@@ -1,0 +1,61 @@
+//lazarus script 25spell is cre file
+
+//after first book quest saradush
+IF
+   //IsValidForPartyDialog("Imoen2")
+   Global("lazarusscroll","GLOBAL",3)
+   Global("IRTLazarusBracelet","GLOBAL",0)
+   OR(2)
+   PartyHasItem("MRIMRIN1")
+  HasItemEquiped("MRIMRIN1","Imoen2")
+   AreaCheck("AR5011")
+   See("Imoen2")
+THEN
+   RESPONSE #100
+    SetGlobal("IRTLazarusBracelet","GLOBAL",1)
+	ActionOverride("Imoen2",StartDialogueNoSet(Player1))
+END
+
+//amkethran reunion
+IF
+   //IsValidForPartyDialog("Imoen2")
+   Global("IRTIntLazAmk","GLOBAL",1)
+   Global("IRTLazarusBracelet","GLOBAL",3)
+    OR(2)
+   PartyHasItem("MRIMRIN1")
+  HasItemEquiped("MRIMRIN1","Imoen2")
+   See("Imoen2")
+    AreaCheck("AR5502")
+THEN
+   RESPONSE #100
+    SetGlobal("IRTLazarusBracelet","GLOBAL",4)
+	ActionOverride("Imoen2",StartDialogueNoSet(Player1))
+END
+
+//amkethran reunion 2
+IF
+  // IsValidForPartyDialog("Imoen2")
+   Global("IRTLazarusBracelet","GLOBAL",5)
+   GlobalTimerExpired("IRTLazarusBraceletTimer","GLOBAL")
+   OR(2)
+   PartyHasItem("MRIMRIN1")
+  HasItemEquiped("MRIMRIN1","Imoen2")
+   See("Imoen2")
+    AreaCheck("AR5502")
+THEN
+   RESPONSE #100
+    SetGlobal("IRTLazarusBracelet","GLOBAL",6)
+	ActionOverride("Imoen2",StartDialogueNoSet(Player1))
+END
+
+//amkethran if bracelet corrupted
+IF
+  // IsValidForPartyDialog("Imoen2")
+   Global("IRTBraceletCorrupted","GLOBAL",1)
+   See("Imoen2")
+   AreaCheck("AR5502")
+THEN
+   RESPONSE #100
+    SetGlobal("IRTBraceletCorrupted","GLOBAL",2)
+	ActionOverride("Imoen2",StartDialogueNoSet(Player1))
+END

@@ -1,0 +1,26 @@
+IF
+   True()
+THEN
+   RESPONSE #100
+   CutSceneID(Player1)
+   MoveViewPoint([1944.1406],INSTANT)
+   CreateVisualEffect("SPFLESHS",[1819.1408])
+   Wait(1)
+	CreateVisualEffect("SPHOLY",[1819.1408])
+	Wait(2)
+   CreateVisualEffect("SPUSEANY",[1819.1408])
+	Wait(1)
+	ActionOverride("D1GHOST",DestroySelf())
+	CreateCreature("MRJaenya",[1819.1408],14)
+	Wait(4)
+	ActionOverride("MRJaenya",StartDialog("MRJaenya",Player1))
+END
+
+IF
+   True()
+THEN
+   RESPONSE #100
+   CutSceneID("d1moth")
+   DestroySelf()
+END
+

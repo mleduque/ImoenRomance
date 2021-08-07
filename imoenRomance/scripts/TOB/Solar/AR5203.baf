@@ -1,0 +1,32 @@
+//yaga shura boss fight area
+//you appear here after first dream talk of you (and Im) past
+//melissan talks to you then after she leaves you get solarpast last event chat
+
+//need to see if Exists actually works when Mel leaves, she casts ReallyForceSpell(Myself,POOF_GONE) in sarmel01, does this make her not exist in area file?
+//saradushsacked is set in sarmel01, melissan talks to you after killing yaga shura
+IF
+  Global("SaradushSacked","GLOBAL",1)
+   Global("IRTPostPastTalk","GLOBAL",0)
+   Global("IRTSolarPast","GLOBAL",2)
+   !Exists("MEL01")
+   !ActuallyInCombat()
+    IsValidForPartyDialog("Imoen2")
+   Global("IRTSolarMelissanTalkDelay","GLOBAL",0)
+THEN
+   RESPONSE #100
+	 RealSetGlobalTimer("IRTSolarMelissanTalkDelay","GLOBAL",3)
+END
+
+IF
+  Global("SaradushSacked","GLOBAL",1)
+   Global("IRTPostPastTalk","GLOBAL",0)
+   Global("IRTSolarPast","GLOBAL",2)
+   !Exists("MEL01")
+    IsValidForPartyDialog("Imoen2")
+    RealGlobalTimerExpired("IRTSolarMelissanTalkDelay","GLOBAL")
+   !ActuallyInCombat()
+THEN
+   RESPONSE #100
+     SetGlobal("IRTPostPastTalk","GLOBAL",1)
+	ActionOverride("Imoen2",StartDialogueNoSet(Player1))
+END

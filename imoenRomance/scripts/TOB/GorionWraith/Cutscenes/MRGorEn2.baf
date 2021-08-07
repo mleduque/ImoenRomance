@@ -1,0 +1,135 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		MoveViewObject(Player1,INSTANT)
+		SmallWait(7)
+		MoveViewPoint([1554.1417],VERY_FAST)
+		MoveToPoint([1554.1417])
+		Face(7)
+		Wait(2)
+		CreateVisualEffect("ICFIRSDI",[1456.1336])
+		Wait(1)
+		CreateCreature("HGWRA01",[1456.1336],14) // Gorion
+		Wait(1)
+		ActionOverride("hgwra01",StartDialogueNoSet(Player1))
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player2)
+		MoveToPoint([1643.1441])
+		Face(7)
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player3)
+		MoveToPoint([1674.1497])
+		Face(7)
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player4)
+		MoveToPoint([1650.1533])
+		Face(7)
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player5)
+		MoveToPoint([1614.1539])
+		Face(7)
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player6)
+		MoveToPoint([1561.1541])
+		Face(7)
+END
+
+//npcs
+
+ 
+  //ActionOverride("MRPHLYDI",MoveToPoint([1655.1286]))
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("MRPHLYDI")
+		MoveToPoint([1655.1286])
+		FaceObject("Imoen2")
+END
+
+// ActionOverride("MRDREPPI",MoveToPoint([1710.1310]))
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("MRDREPPI")
+		MoveToPoint([1710.1310])
+		FaceObject("Imoen2")
+END
+
+// ActionOverride("MRREEVOR",MoveToPoint([1710.1385]))
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("MRREEVOR")
+		MoveToPoint([1710.1385])
+		FaceObject("Imoen2")
+END
+
+// ActionOverride("MRJONDAL",MoveToPoint([1500.1490]))
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("MRJONDAL")
+		MoveToPoint([1500.1490])
+		FaceObject("Imoen2")
+END
+
+// ActionOverride("MROBE",MoveToPoint([1550.1520]))
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("MROBE")
+		MoveToPoint([1550.1520])
+		FaceObject("Imoen2")
+END
+
+// ActionOverride("MRHULL",MoveToPoint([1435.1386]))
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("MRHULL")
+		MoveToPoint([1435.1386])
+		FaceObject("Imoen2")
+END
+
+// ActionOverride("MRFULLER",MoveToPoint([1425.1437]))
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("MRFULLER")
+		MoveToPoint([1425.1437])
+		FaceObject("Imoen2")
+END

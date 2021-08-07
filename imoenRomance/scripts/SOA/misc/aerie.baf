@@ -1,0 +1,27 @@
+
+
+IF
+	RealGlobalTimerExpired("MRAerieFriendshipTimer","GLOBAL")
+	IsValidForPartyDialog("Imoen2")
+	See("Imoen2")
+	See(Player1)
+	!Detect([ENEMY])
+	!ActuallyInCombat()
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	!StateCheck("Imoen2",CD_STATE_NOTVALID)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+	 !AreaCheck("ar2500")
+	 !AreaCheck("ar1500")
+	 OR(3)
+		!AreaType(DUNGEON)
+		AreaCheck("AR2100")
+		AreaCheck("AR2200")
+	OR(2)
+		Global("MRAerImFriend","GLOBAL",0)
+		Global("MRAerImFriend","GLOBAL",4)
+THEN
+  RESPONSE #100
+    IncrementGlobal("MRAerImFriend","GLOBAL",1)
+	StartDialogNoSet(Player1)
+END
+

@@ -1,0 +1,27 @@
+
+//SaradushSacked gets set when Melissan talks to you after killing Yaga shura,
+//so we treat it as post-yagashura global
+IF
+	PartyGoldLT("700")
+	Global("SaradushSacked","GLOBAL",1)
+	Global("IRTLowGold","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("IRTLowGold","GLOBAL",1)
+		StartDialogueNoSet(Player1)
+END
+
+
+// Imoen saves Asana in Amkethran if you do nothing interjection post-talk
+IF
+ Global("IRTImoenHero","GLOBAL",1)
+ IsValidForPartyDialog("Imoen2")
+ AreaCheck("AR5500")
+ !See("ammayor")
+ !See("amasasna")
+  IsValidForPartyDialog("Imoen2")
+THEN
+   RESPONSE #100
+    SetGlobal("IRTImoenHero","GLOBAL",2)
+	ActionOverride("Imoen2",StartDialogueNoSet(Player1))
+END

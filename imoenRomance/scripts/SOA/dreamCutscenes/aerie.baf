@@ -1,0 +1,17 @@
+//Aerie scripting
+
+IF
+RealGlobalTimerExpired("MRDreamComTimer","GLOBAL")
+InParty("Aerie")
+See(Player1)
+!ActuallyInCombat()
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck(Myself,CD_STATE_NOTVALID)
+Global("MRAerieBanterFire","GLOBAL", 0)
+!GlobalGT("Chapter","GLOBAL",%bg2_chapter_3%)
+!Global("MRDreamRomanceComment","GLOBAL",1)
+THEN
+RESPONSE #100
+SetGlobal("MRAerieBanterFire","GLOBAL",2)
+StartDialogNoSet(Player1)
+END

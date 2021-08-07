@@ -1,0 +1,14 @@
+//KELDORN party reaction
+IF
+		Global("ImoenRomanceActive","GLOBAL",1)
+		Global("MRSleptImoen","GLOBAL",1)
+		Global("MRKeldornReaction","GLOBAL",0)
+		IsValidForPartyDialog("Imoen2")
+		IsValidForPartyDialog("Keldorn")
+		GlobalTimerExpired("MRPartyReactionTimer","GLOBAL")
+THEN
+	RESPONSE #100
+	SetGlobal("MRKeldornReaction","GLOBAL",1)
+	SetGlobalTimer("MRPartyReactionTimer","GLOBAL",ONE_DAY)
+	StartDialogueNoSet(Player1)
+END

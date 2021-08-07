@@ -1,0 +1,11 @@
+IF
+   True()
+THEN
+   RESPONSE #100
+   CutSceneID(Player1)
+   Wait(1) 
+   CreateVisualEffect("SPFLESHS",[1910.1346])
+   ActionOverride("MRYWin2",ChangeAnimation("MRYWIN3"))
+   Wait(3) 
+   ActionOverride("MRYWin3",StartDialogNoSet("Imoen2"))
+END

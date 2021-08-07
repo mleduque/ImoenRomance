@@ -1,0 +1,27 @@
+IF
+   True()
+THEN
+   RESPONSE #100
+   CutSceneID(Player1)
+   SetGlobal("IRTSlayerTurnLesson","GLOBAL",4)
+   FadeToColor([30.0],0)
+   Wait(2)
+   JumpToPoint([535.1666])
+   MoveViewObject(Player1,INSTANT)
+   FadeFromColor([30.0],0)
+   Wait(1)
+   FaceObject("Imoen2")
+   Wait(1)
+   ActionOverride("Imoen2",StartDialogueNoSet(Player1))
+   EndCutSceneMode()
+END
+
+IF
+   True()
+THEN
+   RESPONSE #100
+   CutSceneID("Imoen2")
+   Wait(2)
+   JumpToPoint([586.1666])
+   FaceObject(Player1)
+END

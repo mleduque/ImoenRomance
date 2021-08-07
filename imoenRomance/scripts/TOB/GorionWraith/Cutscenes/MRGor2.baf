@@ -1,0 +1,28 @@
+IF
+ True()
+THEN
+ RESPONSE #100
+ CutSceneId("Imoen2")
+ MoveToPoint([2120.1550])
+ Wait(1)
+ EndCutSceneMode()
+ ActionOverride(Player1,StartDialog("Player1","MRPHLYDI"))
+END
+
+IF
+ True()
+THEN
+ RESPONSE #100
+ CutSceneId(Player1)
+ SmallWait(3)
+ MoveToPoint([2125.1528])
+END
+
+IF
+ True()
+THEN
+ RESPONSE #100
+ CutSceneId("MRPHLYDI")
+ SmallWait(1)
+ MoveViewObject("MRPHLYDI",2)
+END

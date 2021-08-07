@@ -1,0 +1,10 @@
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneId("Aerie")  // 
+    MoveViewObject(Player1,VERY_FAST)
+    MoveToObject(Player1)
+    ActionOverride("Aerie",StartDialogNoSet(Player1))
+END
+

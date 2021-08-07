@@ -1,0 +1,15 @@
+//Aerie party reaction
+IF
+	Global("MRAerieReaction","GLOBAL",0) 
+		Global("ImoenRomanceActive","GLOBAL",2)
+		Global("MRSleptImoen","GLOBAL",1)
+		IsValidForPartyDialog("Imoen2")
+		IsValidForPartyDialog("Aerie")
+		!Global("AerieRomanceActive","GLOBAL",2)
+		GlobalTimerExpired("MRPartyReactionTimer","GLOBAL")
+THEN
+	RESPONSE #100
+	SetGlobal("MRAerieReaction","GLOBAL",1) 
+	SetGlobalTimer("MRPartyReactionTimer","GLOBAL",ONE_DAY)
+	StartDialogueNoSet(Player1)
+END

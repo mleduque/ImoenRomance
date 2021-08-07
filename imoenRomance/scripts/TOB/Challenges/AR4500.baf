@@ -1,0 +1,69 @@
+
+//challenge 1 complete
+IF
+   Global("BeginChallenge1","GLOBAL",12)
+   IsValidForPartyDialog("Imoen2")
+   Global("IRTTestTalk1","GLOBAL",0)
+   !StateCheck(Player1,CD_STATE_NOTVALID)
+   !StateCheck("Imoen2",CD_STATE_NOTVALID)
+   InParty("Imoen2")
+THEN
+   RESPONSE #100
+    SetGlobal("IRTTestTalk1","GLOBAL",1)
+	ActionOverride("Imoen2",StartDialogueNoSet(Player1))
+END
+
+//second challenge complete
+IF
+   Global("BeginChallenge2","GLOBAL",3)
+   IsValidForPartyDialog("Imoen2")
+   Global("IRTTestTalk2","GLOBAL",0)
+   !Global("ImoenRomanceActive","GLOBAL",3)
+   !StateCheck(Player1,CD_STATE_NOTVALID)
+   !StateCheck("Imoen2",CD_STATE_NOTVALID)
+   
+THEN
+   RESPONSE #100
+    SetGlobal("IRTTestTalk2","GLOBAL",1)
+	ActionOverride("Imoen2",StartDialogueNoSet(Player1))
+END
+
+//third challenge complete
+IF
+   Global("BeginChallenge3","GLOBAL",3)
+   IsValidForPartyDialog("Imoen2")
+   Global("IRTTestTalk3","GLOBAL",0)
+   !StateCheck(Player1,CD_STATE_NOTVALID)
+   !StateCheck("Imoen2",CD_STATE_NOTVALID)
+THEN
+   RESPONSE #100
+    SetGlobal("IRTTestTalk3","GLOBAL",1)
+	ActionOverride("Imoen2",StartDialogueNoSet(Player1))
+END
+
+
+//fourth challenge complete
+IF
+    Global("BeginChallenge4","GLOBAL",6)
+   IsValidForPartyDialog("Imoen2")
+   Global("IRTTestTalk4","GLOBAL",2)
+   !StateCheck(Player1,CD_STATE_NOTVALID)
+   !StateCheck("Imoen2",CD_STATE_NOTVALID)
+THEN
+   RESPONSE #100
+    SetGlobal("IRTTestTalk4","GLOBAL",3)
+	ActionOverride("Imoen2",StartDialogueNoSet(Player1))
+END
+
+//fifth challenge complete
+IF
+    Global("BeginChallenge5","GLOBAL",4)
+   IsValidForPartyDialog("Imoen2")
+   Global("IRTTestTalk5","GLOBAL",0)
+   !StateCheck(Player1,CD_STATE_NOTVALID)
+   !StateCheck("Imoen2",CD_STATE_NOTVALID)
+THEN
+   RESPONSE #100
+    SetGlobal("IRTTestTalk5","GLOBAL",1)
+	ActionOverride("Imoen2",StartDialogueNoSet(Player1))
+END

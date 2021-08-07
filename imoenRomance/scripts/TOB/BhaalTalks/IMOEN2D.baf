@@ -1,0 +1,14 @@
+//done challenge 2
+IF
+   Global("IRTSlayerTurnLesson","GLOBAL",1)
+   IsValidForPartyDialog(Player1)
+   IsValidForPartyDialog(Myself)
+   !StateCheck(Player1,CD_STATE_NOTVALID)
+   !StateCheck(Myself,CD_STATE_NOTVALID)
+   AreaCheck("AR4500")
+   Global("BeginChallenge2","GLOBAL",3)
+THEN
+   RESPONSE #100
+    SetGlobal("IRTSlayerTurnLesson","GLOBAL",2)
+	ActionOverride("Imoen2",StartDialogueNoSet(Player1))
+END

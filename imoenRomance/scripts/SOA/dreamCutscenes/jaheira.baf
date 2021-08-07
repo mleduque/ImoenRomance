@@ -1,0 +1,16 @@
+
+IF
+  RealGlobalTimerExpired("MRDreamComTimer","GLOBAL")
+  InParty("Jaheira")  // Jaheira
+  See(Player1)
+  !ActuallyInCombat()
+  !StateCheck(Player1,CD_STATE_NOTVALID)
+  !StateCheck(Myself,CD_STATE_NOTVALID)
+  Global("MRJaheiraBanterFire","GLOBAL",0)
+  !GlobalGT("Chapter","GLOBAL",%bg2_chapter_3%)
+  !Global("MRDreamRomanceComment","GLOBAL",1)
+THEN
+  RESPONSE #100
+  SetGlobal("MRJaheiraBanterFire","GLOBAL",2)
+  StartDialogNoSet(Player1)
+END

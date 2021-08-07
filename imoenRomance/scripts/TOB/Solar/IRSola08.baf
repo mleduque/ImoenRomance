@@ -1,0 +1,45 @@
+IF
+   True()
+THEN
+   RESPONSE #100
+   CutSceneID(Player1)
+   SmallWait(8)
+   CreateVisualEffect("ICRMPARI",[1819.1408])
+   CreateVisualEffect("ICRMPARI",[1903.1305])
+   SmallWait(2)
+   SmallWait(6)
+   CreateVisualEffect("ICRMPARI",[1943.1345])
+   CreateVisualEffect("ICRMPARI",[1910.1346])
+   CreateVisualEffect("ICRMPARI",[1953.1320])
+   CreateCreature("MRJaenya",[1943.1345],15)
+   CreateCreature("MRYWin2",[1910.1346],15)
+   CreateCreature("MRYIm",[1953.1320],15)
+   Wait(3)
+   ActionOverride("MRYWin2",StartDialog("MRYWin","MRYWin2"))
+END
+
+IF
+   True()
+THEN
+   RESPONSE #100
+   CutSceneID("Imoen2")
+   MoveViewPoint([1943.1345],1)
+END
+
+IF
+   True()
+THEN
+   RESPONSE #100
+   CutSceneID("MRJaenya")
+   SmallWait(10)
+   DestroySelf()
+END
+
+IF
+   True()
+THEN
+   RESPONSE #100
+   CutSceneID("MRYWin")
+   SmallWait(10)
+   DestroySelf()
+END

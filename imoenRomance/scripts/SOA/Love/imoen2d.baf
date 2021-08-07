@@ -1,0 +1,48 @@
+//last lovetalk sleep triggered
+//after romance resolution hmm to remember child goblin attack
+IF
+	InParty(Myself)
+	!StateCheck(Player1,STATE_SLEEPING)
+    !StateCheck(Myself,STATE_SLEEPING)
+	!AreaType(DUNGEON)
+	Global("MRSleptImoen","GLOBAL",1)
+	Global("MRLoveTalk","GLOBAL",10)
+	Global("ImoenRomanceActive","GLOBAL",2)
+	See(Player1)
+	!AreaCheck("AR0334")
+THEN
+	RESPONSE #100
+		IncrementGlobal("MRLoveTalk","GLOBAL",1)
+		StartDialogueNoSet(Player1)
+END
+
+//Same dream but for when your just friends with Imoen
+IF
+	InParty(Myself)
+	!StateCheck(Player1,STATE_SLEEPING)
+    !StateCheck(Myself,STATE_SLEEPING)
+	!AreaType(DUNGEON)
+	Global("MRLoveTalk","GLOBAL",10)
+	Global("ImoenRomanceActive","GLOBAL",4)
+	GlobalGT("MRCampSleepTalk","GLOBAL",1)
+	See(Player1)
+	!AreaCheck("AR0334")
+THEN
+	RESPONSE #100
+		IncrementGlobal("MRLoveTalk","GLOBAL",1)
+		StartDialogueNoSet(Player1)
+END
+
+
+/* before sleep quality time 5 */
+//quality time 5
+IF
+	See(Player1)
+	!ActuallyInCombat()
+	Global("MRQuality5","GLOBAL",2)
+	Global("ImoenRomanceActive","GLOBAL",2)
+	!AreaCheck("AR0334")
+THEN
+	RESPONSE #100
+		SetGlobal("MRQuality5","GLOBAL",3)
+END

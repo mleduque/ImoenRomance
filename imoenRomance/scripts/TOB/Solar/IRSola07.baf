@@ -1,0 +1,19 @@
+IF
+   True()
+THEN
+   RESPONSE #100
+   CutSceneID(Player1)
+   SmallWait(8) 
+   ActionOverride("MRNevea",PlayDeadInterruptable(100))
+   SmallWait(3)
+   ActionOverride("MRTarren",PlayDeadInterruptable(100))
+   Wait(1)
+   CreateVisualEffect("ICFIRSDI",[2003.1305])
+   CreateVisualEffect("ICFIRSDI",[1953.1355])
+   SmallWait(4)
+   ActionOverride("MRNevea",DestroySelf())
+   ActionOverride("MRTarren",DestroySelf())
+   Wait(2)
+   ActionOverride("MRYWin",StartDialog("MRYWin","MRYWin"))
+   EndCutSceneMode()
+END

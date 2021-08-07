@@ -1,0 +1,17 @@
+/* underdark general area script file */
+//everyone must be in the area
+
+/* talk with imoen drow change */
+//everyone must exit
+IF
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+    !StateCheck("Imoen2",CD_STATE_NOTVALID)
+	Global("PlayerLooksLikeDrow","GLOBAL",1)
+	InParty("Imoen2")
+	!ActuallyInCombat()
+	Global("MRDrowSkin","AR2100",0)
+THEN
+	RESPONSE #100
+	SetGlobal("MRDrowSkin","AR2100",1)
+    ActionOverride("Imoen2",StartDialogueNoSet(Player1))
+END

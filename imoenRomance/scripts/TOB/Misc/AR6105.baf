@@ -1,0 +1,10 @@
+IF
+ !Exists("senpri01")
+ Global("TalkedOnceSenpri","GLOBAL",1)
+ Global("IRTSendai","GLOBAL",0)
+  IsValidForPartyDialog("Imoen2")
+THEN
+   RESPONSE #100
+    SetGlobal("IRTSendai","GLOBAL",1)
+	ActionOverride("Imoen2",StartDialogueNoSet(Player1))
+END

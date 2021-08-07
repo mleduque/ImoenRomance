@@ -1,0 +1,9 @@
+IF
+ Global("IRTAbazigal","GLOBAL",0)
+ !Global("ImoenRomanceActive","GLOBAL",3)
+  IsValidForPartyDialog("Imoen2")
+THEN
+   RESPONSE #100
+    SetGlobal("IRTAbazigal","GLOBAL",1)
+	ActionOverride("Imoen2",StartDialogueNoSet(Player1))
+END

@@ -1,0 +1,25 @@
+IF 
+	True()
+THEN
+	RESPONSE #100
+	CutSceneId("Imoen2")
+	MoveToPointNoRecticle([349.243])
+	Face(10)
+	DisplayStringHead(Myself,@0)
+	Wait(2)
+	MoveToPointNoRecticle([283.298])
+	Wait(2)
+	ForceSpell("Imoen2","WIZARD_FREEDOM")
+	Wait(5)
+	CreateVisualEffect("SPSUMP",[329.298]) 
+	PlaySound("EFF_P117")
+	Wait(3)
+	CreateCreature("soren",[329.298],10)
+	CreateVisualEffectObject("SPGFLSH1","sorenthis")
+	FaceObject("Sorenthis")
+	ActionOverride("Sorenthis",	FaceObject("Imoen2"))
+	Wait(2)
+	SetGlobal("IRTLazarusBracelet","GLOBAL",9)
+	ActionOverride("Sorenthis",StartDialogueNoSet(Player1))
+	EndCutSceneMode()
+END

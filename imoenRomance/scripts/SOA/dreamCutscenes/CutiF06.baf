@@ -1,0 +1,27 @@
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId(Player1)
+	  Wait(2)
+        FadeToColor([30.0],0)
+        Wait(2)
+	  ActionOverride("ImDream",DestroySelf())
+        LeaveAreaLUAPanic("AR64MR","",[207.1058],6)
+        LeaveAreaLUA("AR64MR","",[207.1058],6)
+        MultiPlayerSync()
+	  CreateCreature("YoungeFc",[60.608],0) // young Main character
+	  CreateCreature("Youngeri",[140.608],0) // Young Imoen
+	  DayNight(13)
+	  Explore()
+        MoveViewObject(Player1,0)
+	  Wait(3)
+        FadeFromColor([30.0],0)
+        Wait(3)
+	  CreateCreatureDoor("ImDream",[70.1022],12) // Imoen
+	  MoveViewObject("ImDream",2)
+	  Wait(6)
+	  SetGlobal("MRDream2","GLOBAL",2)
+	  ActionOverride("ImDream",StartDialogNoSet(Player1))
+	  EndCutSceneMode()
+END

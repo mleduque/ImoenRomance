@@ -1,0 +1,11 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+	CutSceneId(Player1)
+	CreateCreatureDoor("ImDream",[3384.2285],14)
+	Wait(6)
+	SetGlobal("MRDream1","GLOBAL",1)
+	ActionOverride("IMDREAM",StartDialogueNoSet(Player1))
+	EndCutSceneMode()
+END

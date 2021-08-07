@@ -1,0 +1,34 @@
+/* underdark exit fresh air comment*/
+//everyone must be in the area
+IF
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+    !StateCheck("Imoen2",CD_STATE_NOTVALID)
+	InParty("Imoen2")
+	!ActuallyInCombat()
+	Global("MRCampSleepTalk","GLOBAL",0)
+	Global("ElhanFinishedSpeaking","GLOBAL",1)
+	Global("MRExitComment","AR2500",0)
+	RealGlobalTimerExpired("MRExitCommentTimer","GLOBAL")
+	
+THEN
+	RESPONSE #100
+	SetGlobal("MRExitComment","AR2500",1)
+    ActionOverride("Imoen2",StartDialogueNoSet(Player1))
+END
+
+//camp prompt 2
+IF
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+    !StateCheck("Imoen2",CD_STATE_NOTVALID)
+	InParty("Imoen2")
+	!ActuallyInCombat()
+	Global("MRCampSleepTalk","GLOBAL",0)
+	Global("ImoenRomanceActive","GLOBAL",1)
+	
+	Global("MRCampPrompt","GLOBAL",2)
+	Global("MRCampfire","GLOBAL",1)
+THEN
+	RESPONSE #100
+	SetGlobal("MRCampPrompt","GLOBAL",3)
+    ActionOverride("Imoen2",StartDialogueNoSet(Player1))
+END

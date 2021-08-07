@@ -1,0 +1,77 @@
+
+IF 
+	True()
+THEN
+	RESPONSE #100
+	CutSceneId(Player1)
+	Wait(1)
+	FadeToColor([30.0],0)
+	Wait(2)
+	JumpToPoint([2357.542])
+	DropInventory()
+	JumpToPoint([2357.642])
+	Wait(4)
+	FaceObject("Imoen2")
+	 ActionOverride("Imoen2",FaceObject(Player1))
+	FadeFromColor([30.0],0)
+	Wait(3)
+	ActionOverride("Imoen2",StartDialogueNoSet(Player1))
+	EndCutSceneMode()
+END
+
+
+IF
+	True()
+THEN
+	RESPONSE #100
+	CutSceneId(Player2)
+	Wait(3)
+	JumpToPoint([2349.595])
+	Wait(1)
+	FaceObject("Imoen2")
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+	CutSceneId(Player3)
+	Wait(3)
+	JumpToPoint([2309.688])
+	Wait(1)
+	FaceObject("Imoen2")
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+	CutSceneId(Player4)
+	Wait(3)
+	JumpToPoint([2216.691])
+	Wait(1)
+	FaceObject("Imoen2")
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+	CutSceneId(Player5)
+	Wait(3)
+	JumpToPoint([2185.640])
+	Wait(1)
+	FaceObject("Imoen2")
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+	CutSceneId(Player6)
+	Wait(3)
+	JumpToPoint([2231.591])
+	Wait(1)
+	FaceObject("Imoen2")
+END
+

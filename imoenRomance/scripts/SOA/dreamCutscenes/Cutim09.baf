@@ -1,0 +1,12 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+	CutSceneId("youngerc")
+	Moveviewobject("ImDream",FAST)
+	MoveToObject("Youngeri")
+	Wait(3)
+	SetGlobal("MRDream2","GLOBAL",5)
+	ActionOverride("ImDream",StartDialogNoSet(Player1))
+	EndCutScenemode()
+END

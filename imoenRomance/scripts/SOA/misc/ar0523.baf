@@ -1,0 +1,15 @@
+
+//bard stonghold talk
+IF
+	Global("MRStrongholdTalkBard","GLOBAL",0)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+    AreaCheckObject("AR0523","Imoen2")
+	AreaCheckObject("AR0523",Player1)
+	GlobalGT("Playhouse","GLOBAL",0)
+	InParty("Imoen2")
+	!ActuallyInCombat()
+THEN
+	RESPONSE #100
+	SetGlobal("MRStrongholdTalkBard","GLOBAL",1)
+	ActionOverride("Imoen2",StartDialogueNoSet(Player1))
+END

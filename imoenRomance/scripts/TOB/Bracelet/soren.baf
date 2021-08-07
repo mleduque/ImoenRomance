@@ -1,0 +1,79 @@
+IF
+	Die()
+THEN
+	RESPONSE #100
+		CreateVisualEffectObject("SPUNHOLY",Myself)
+		DestroySelf()
+END
+
+IF
+	HPPercentLT(Myself,25)
+	Global("DevaHeal","LOCALS",0)
+THEN
+	RESPONSE #100
+		ForceSpellRES("devaheal",Myself) // Heal
+		SetGlobal("DevaHeal","LOCALS",1)
+END
+
+IF
+	HaveSpell(CLERIC_LESSER_RESTORATION) // SPPR417.SPL (Lesser Restoration)
+	Allegiance(Myself,GOODCUTOFF)
+	See([PC])
+	CheckStatGT(LastSeenBy(Myself),0,LEVELDRAIN)
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),CLERIC_LESSER_RESTORATION) // SPPR417.SPL (Lesser Restoration)
+END
+
+IF
+	HaveSpell(CLERIC_NEUTRALIZE_POISON) // SPPR404.SPL (Neutralize Poison)
+	Allegiance(Myself,GOODCUTOFF)
+	See([PC])
+	StateCheck(LastSeenBy(Myself),STATE_POISONED)
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),CLERIC_NEUTRALIZE_POISON) // SPPR404.SPL (Neutralize Poison)
+END
+
+IF
+	HaveSpell(CLERIC_REMOVE_FEAR) // SPPR108.SPL (Remove Fear)
+	Allegiance(Myself,GOODCUTOFF)
+	See([PC])
+	StateCheck(LastSeenBy(Myself),STATE_PANIC)
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),CLERIC_REMOVE_FEAR) // SPPR108.SPL (Remove Fear)
+END
+
+IF
+	HaveSpell(CLERIC_CURE_DISEASE) // SPPR317.SPL (Cure Disease)
+	See([PC])
+	StateCheck(LastSeenBy(Myself),STATE_DISEASED)
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),CLERIC_CURE_DISEASE) // SPPR317.SPL (Cure Disease)
+END
+
+IF
+	HPPercentLT(MostDamagedOf(Myself),25)
+	Allegiance(Myself,GOODCUTOFF)
+	See([PC])
+	!StateCheck(MostDamagedOf(Myself),STATE_INVISIBLE)
+	HaveSpell(CLERIC_HEAL) // SPPR607.SPL (Heal)
+THEN
+	RESPONSE #100
+		Spell(MostDamagedOf(Myself),CLERIC_HEAL) // SPPR607.SPL (Heal)
+END
+
+IF
+	HaveSpell(CLERIC_DISPEL_MAGIC) // SPPR303.SPL (Dispel Magic)
+	Allegiance(Myself,GOODCUTOFF)
+	See([PC])
+	OR(2)
+		StateCheck(LastSeenBy(Myself),STATE_CHARMED)
+		StateCheck(LastSeenBy(Myself),STATE_CONFUSED)
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),CLERIC_DISPEL_MAGIC) // SPPR303.SPL (Dispel Magic)
+END
+

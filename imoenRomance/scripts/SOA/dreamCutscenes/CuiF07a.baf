@@ -1,0 +1,10 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+	CutSceneId("ImDream")
+	MoveViewObject("ImDream",1)
+	MoveToObject(Player1)
+	SetGlobal("MRDream2","GLOBAL",6)
+	StartDialogNoSet(Player1)
+END

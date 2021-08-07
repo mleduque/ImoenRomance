@@ -1,0 +1,15 @@
+
+//planar stonghold talk
+IF
+	Global("MRStrongholdTalkMage","GLOBAL",0)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	AreaCheckObject("AR0411","Imoen2")
+	AreaCheckObject("AR0411",Player1)
+	GlobalGT("PCSphere","GLOBAL",0)
+	InParty("Imoen2")
+	!ActuallyInCombat()
+THEN
+	RESPONSE #100
+	SetGlobal("MRStrongholdTalkMage","GLOBAL",1)
+	ActionOverride("Imoen2",StartDialogueNoSet(Player1))
+END

@@ -1,0 +1,26 @@
+//cutscene in PID rest in Amkethran Inn
+IF
+   True()
+THEN
+   RESPONSE #100
+   CutSceneID(Player1)
+StorePartyLocations()   
+	FadeToColor([30.0],0) 
+	Wait(1) 
+	Rest()
+	ActionOverride(Player2,Rest())
+	ActionOverride(Player3,Rest())
+	ActionOverride(Player4,Rest())
+	ActionOverride(Player5,Rest())
+	ActionOverride(Player6,Rest())
+	LeaveAreaLUAPanic("ARTR01","",[520.295],4)
+    LeaveAreaLUA("ARTR01","",[520.295],4)
+    ActionOverride("Imoen2",LeaveAreaLUA("ARTR01","",[474.289],12))
+	Explore()
+	MoveViewObject(Player1,0)
+	Wait(1) 
+	FadeFromColor([30.0],0)
+	Wait(2)
+	ActionOverride("Imoen2",StartDialogueNoSet(Player1))
+	EndCutSceneMode()
+END

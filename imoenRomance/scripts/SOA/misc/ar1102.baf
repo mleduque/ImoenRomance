@@ -1,0 +1,17 @@
+
+//ranger stonghold 
+//this area script is actually used for ar1107.ARE, because it changes from merella cabin to stronghold cabin but they re-use the merella cabin area script which is ar1102
+IF
+	Global("MRStrongholdTalkRan","GLOBAL",0)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+    Global("MRStrongholdTalkUmar","GLOBAL",2)
+	GlobalGT("RangerProtector","GLOBAL",0)
+	InParty("Imoen2")
+	!ActuallyInCombat()
+	AreaCheckObject("AR1107","Imoen2")
+	AreaCheckObject("AR1107",Player1)
+THEN
+	RESPONSE #100
+	SetGlobal("MRStrongholdTalkRan","GLOBAL",1)
+	ActionOverride("Imoen2",StartDialogueNoSet(Player1))
+END

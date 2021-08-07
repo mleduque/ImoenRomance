@@ -1,0 +1,14 @@
+/* entrance to spellhold from brynlaw, mostly to initiate imoen dialogue she glad to breathe air */
+//everyone must be in the area
+IF
+	InParty("Imoen2")
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+    !StateCheck("Imoen2",CD_STATE_NOTVALID)
+	!ActuallyInCombat()
+	Global("Chapter","GLOBAL",%bg2_chapter_4%)
+	Global("MRExitComment","AR1500",0)
+THEN
+	RESPONSE #100
+	SetGlobal("MRExitComment","AR1500",1)
+	ActionOverride("Imoen2",StartDialogueNoSet(Player1))
+END

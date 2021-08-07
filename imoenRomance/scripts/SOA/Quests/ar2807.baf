@@ -1,0 +1,42 @@
+/* black dragon kill with imoen */
+//everyone must be in the area
+IF
+	InParty("Imoen2")
+	ActuallyInCombat()
+	Dead("dragblac")
+	Exists("dragblac")
+	Global("MRBlackDragon","GLOBAL",0)
+THEN
+	RESPONSE #100
+	SetGlobal("MRBlackDragon","GLOBAL",1)
+END
+
+IF
+	InParty("Imoen2")
+	!ActuallyInCombat()
+	Global("MRBlackDragon","GLOBAL",1)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+    !StateCheck("Imoen2",CD_STATE_NOTVALID)
+	Global("MRShadowDragon","GLOBAL",1)
+	Global("MRFirkraag","GLOBAL",1)
+	Global("MRDragonKillTalk","GLOBAL",2)
+THEN
+	RESPONSE #100
+	SetGlobal("MRDragonKillTalk","GLOBAL",3)
+	ActionOverride("Imoen2",StartDialogueNoSet(Player1))
+END
+
+IF
+	InParty("Imoen2")
+	!ActuallyInCombat()
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+    !StateCheck("Imoen2",CD_STATE_NOTVALID)
+	Global("MRBlackDragon","GLOBAL",1)
+	Global("MRShadowDragon","GLOBAL",0)
+	Global("MRFirkraag","GLOBAL",0)
+	Global("MRDragonKillTalk","GLOBAL",0)
+THEN
+	RESPONSE #100
+	SetGlobal("MRDragonKillTalk","GLOBAL",1)
+	ActionOverride("Imoen2",StartDialogueNoSet(Player1))
+END

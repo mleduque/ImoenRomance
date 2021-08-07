@@ -1,0 +1,22 @@
+IF
+   True()
+THEN
+   RESPONSE #100
+   CutSceneID(Player1)
+   Wait(1)
+   CreateVisualEffect("SPFEAREF",[1880.1495])
+   Wait(1)
+   CreateVisualEffect("SPROTECT",[1880.1495])
+   Wait(1)
+   CreateCreature("MRKiller",[1880.1495],9)
+   Wait(2)
+   ActionOverride("MRKiller",StartDialog("MRKiller","MRKiller"))
+END
+
+IF
+   True()
+THEN
+   RESPONSE #100
+   CutSceneID("Imoen2")
+   MoveViewPoint([1880.1495],1)
+END

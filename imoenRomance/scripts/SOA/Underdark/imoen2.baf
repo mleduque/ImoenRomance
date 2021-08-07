@@ -1,0 +1,32 @@
+/* talk check with imoen for imprisoned sphere */
+IF
+	Global("MRUdTrap5Released","AR2100",1)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+    !StateCheck("Imoen2",CD_STATE_NOTVALID)
+	InParty("Imoen2")
+	!ActuallyInCombat()
+	See(Player1)
+	Global("MRSphere","AR2100",0)
+	AreaCheck("AR2100")
+THEN
+	RESPONSE #100
+	SetGlobal("MRSphere","AR2100",1)
+    ActionOverride("Imoen2",StartDialogueNoSet(Player1))
+END
+
+//Phaere imoen talk
+
+IF
+	InParty(Myself)
+	!Range("Phaere",6)
+	Global("MRSleptPhaere","GLOBAL",0)
+	AreaCheck("ar2204")
+	See(Player1)
+	OR(2)
+		Global("PhaereInnuendo","GLOBAL",2)
+		Global("PhaereInnuendo","GLOBAL",3)
+THEN
+	RESPONSE #100
+	SetGlobal("MRSleptPhaere","GLOBAL",1) 
+		StartDialogueNoSet(Player1)
+END

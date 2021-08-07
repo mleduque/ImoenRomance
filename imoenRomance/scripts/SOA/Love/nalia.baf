@@ -1,0 +1,22 @@
+//Nalia party reaction
+IF
+	Global("MRNaliaReaction","GLOBAL",0)
+	OR(2)
+	Global("ImoenRomanceActive","GLOBAL",1)
+	Global("ImoenRomanceActive","GLOBAL",2)
+	Global("MRSleptImoen","GLOBAL",1)
+	IsValidForPartyDialog("Imoen2")
+	IsValidForPartyDialog("Nalia")
+	OR(5)
+		InParty("Keldorn")
+		InParty("Anomen")
+		InParty("Jaheira")
+		InParty("Korgan")
+		InParty("Valygar")
+	GlobalTimerExpired("MRPartyReactionTimer","GLOBAL")
+THEN
+	RESPONSE #100
+	SetGlobal("MRNaliaReaction","GLOBAL",1) 
+	SetGlobalTimer("MRPartyReactionTimer","GLOBAL",ONE_DAY)
+	StartDialogueNoSet(Player1)
+END

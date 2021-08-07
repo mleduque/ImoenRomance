@@ -1,0 +1,15 @@
+
+//ranger stonghold talk actually umar hills town
+IF
+	Global("MRStrongholdTalkUmar","GLOBAL",0)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+    AreaCheckObject("AR1100","Imoen2")
+	AreaCheckObject("AR1100",Player1)
+	GlobalGT("RangerProtector","GLOBAL",0)
+	InParty("Imoen2")
+	!ActuallyInCombat()
+THEN
+	RESPONSE #100
+	SetGlobal("MRStrongholdTalkUmar","GLOBAL",1)
+	ActionOverride("Imoen2",StartDialogueNoSet(Player1))
+END

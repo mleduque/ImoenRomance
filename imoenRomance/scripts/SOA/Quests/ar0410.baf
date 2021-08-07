@@ -1,0 +1,14 @@
+/* Lavok */
+//everyone must be in the area
+IF
+	InParty("Imoen2")
+	!ActuallyInCombat()
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+    !StateCheck("Imoen2",CD_STATE_NOTVALID)
+	Global("ToldDemonsHeart","GLOBAL",1)
+	Global("MRLavok","GLOBAL",0)
+THEN
+	RESPONSE #100
+	SetGlobal("MRLavok","GLOBAL",1)
+	ActionOverride("Imoen2",StartDialogueNoSet(Player1))
+END

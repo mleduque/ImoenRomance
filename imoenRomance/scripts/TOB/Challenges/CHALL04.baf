@@ -1,0 +1,11 @@
+//this is the script file
+//for the proximity trigger for challenge 4 entrance
+IF
+   IsValidForPartyDialog("Imoen2")
+   Range(Player1,29)
+   Global("IRTTestTalk4","GLOBAL",0)
+THEN
+   RESPONSE #100
+    SetGlobal("IRTTestTalk4","GLOBAL",1)
+	ActionOverride("Imoen2",StartDialogueNoSet(Player1))
+END

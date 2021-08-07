@@ -1,0 +1,56 @@
+
+IF
+	InParty(Myself)
+	RealGlobalTimerExpired("IRTAerieImoenTimer","GLOBAL")
+	See(Player1)
+	!ActuallyInCombat()
+	!StateCheck("Imoen2",CD_STATE_NOTVALID)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+	!AreaType(DUNGEON)
+	IsValidForPartyDialog("Aerie")
+	Global("IRTImAerTalks","GLOBAL",14)
+	!Global("ImoenRomanceActive","GLOBAL",2)
+	!Global("IRTAerImFriend","GLOBAL",2)
+THEN
+	RESPONSE #100
+		IncrementGlobal("IRTImAerTalks","GLOBAL",1)
+		StartDialogueNoSet(Player1)
+END
+
+IF
+	InParty(Myself)
+	RealGlobalTimerExpired("IRTAerieImoenTimer","GLOBAL")
+	See("Aerie")
+	!ActuallyInCombat()
+	!StateCheck("Imoen2",CD_STATE_NOTVALID)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+	!AreaType(DUNGEON)
+	IsValidForPartyDialog("Aerie")
+	IsValidForPartyDialog("Imoen2")
+	OR(3)
+	Global("IRTImAerTalks","GLOBAL",4)
+	Global("IRTImAerTalks","GLOBAL",6)
+	Global("IRTImAerTalks","GLOBAL",10)
+	!Global("IRTAerImFriend","GLOBAL",2)
+THEN
+	RESPONSE #100
+		IncrementGlobal("IRTImAerTalks","GLOBAL",1)
+		StartDialogueNoSet("Aerie")
+END
+
+IF
+	InParty(Myself)
+	RealGlobalTimerExpired("IRTAerieImoenTimer","GLOBAL")
+	See(Player1)
+	!ActuallyInCombat()
+	!StateCheck("Imoen2",CD_STATE_NOTVALID)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+	!AreaType(DUNGEON)
+	IsValidForPartyDialog("Imoen2")
+	Global("IRTImAerTalks","GLOBAL",8)
+	!Global("IRTAerImFriend","GLOBAL",2)
+THEN
+	RESPONSE #100
+		IncrementGlobal("IRTImAerTalks","GLOBAL",1)
+		StartDialogueNoSet(Player1)
+END

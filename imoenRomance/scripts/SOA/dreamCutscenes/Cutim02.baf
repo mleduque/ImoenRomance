@@ -1,0 +1,19 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+	CutSceneId("GoblinMR")
+	Wait(1)
+	PlayDead(2000)
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+	CutSceneId("BoyMR")
+	MoveViewObject("BoyMR",3)
+	Wait(2)
+	StartDialogNoSet("GirlMR")
+	EndCutSceneMode()
+END

@@ -1,0 +1,10 @@
+//enter seige camp before yaga is dead, Imoen comments
+IF
+ !Dead("HGNYA01")
+ Global("IRTInSiegeCampEarly","GLOBAL",0)
+  IsValidForPartyDialog("Imoen2")
+THEN
+   RESPONSE #100
+    SetGlobal("IRTInSiegeCampEarly","GLOBAL",1)
+	ActionOverride("Imoen2",StartDialogueNoSet(Player1))
+END
